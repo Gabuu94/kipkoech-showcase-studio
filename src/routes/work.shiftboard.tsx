@@ -41,11 +41,6 @@ function Shiftboard() {
       tag="HR · Attendance"
       description="Live roster persisted to a database. Clock-in toggles update across every browser, on every branch, in real time."
       cover={cover}
-      gallery={[
-        { src: cover, alt: "Shiftboard HRMS cover", caption: "Shiftboard — HR & attendance platform" },
-        { src: gal1, alt: "HR dashboard on monitor", caption: "Live roster, attendance heatmap, branch breakdown" },
-        { src: gal2, alt: "Team collaborating in office", caption: "Teams Shiftboard serves — distributed across branches" },
-      ]}
       caseStudy={{
         category: "Web App",
         scope: "HR & attendance platform",

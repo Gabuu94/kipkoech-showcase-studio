@@ -62,11 +62,6 @@ function Ledgerly() {
       tag="Bookkeeping SaaS"
       description="Lightweight ledger for small businesses. Every entry persists to a live database, so books stay consistent across the whole team."
       cover={cover}
-      gallery={[
-        { src: cover, alt: "Ledgerly dashboard cover", caption: "Hero — Ledgerly bookkeeping dashboard" },
-        { src: gal1, alt: "Ledgerly dashboard on laptop", caption: "Live P&L dashboard with category charts" },
-        { src: gal2, alt: "Ledgerly mobile invoice", caption: "Mobile invoice view — same data, on the go" },
-      ]}
       caseStudy={{
         category: "Web App",
         scope: "SaaS bookkeeping platform",

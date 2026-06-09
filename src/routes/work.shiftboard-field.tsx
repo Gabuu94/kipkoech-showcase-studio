@@ -40,10 +40,6 @@ function Field() {
       title="Shiftboard Field"
       tag="Mobile · Flutter"
       description="Field-team companion for clocking in, logging location and syncing back to the HR backend. Geofenced, offline-friendly, supervisor-aware."
-      gallery={[
-        { src: gal1, alt: "Site worker clocking in on phone", caption: "Geofenced clock-in at a construction site" },
-        { src: gal2, alt: "Supervisor viewing live attendance map", caption: "Supervisor's live attendance map across active sites" },
-      ]}
       caseStudy={{
         category: "Mobile App",
         scope: "Field attendance companion",

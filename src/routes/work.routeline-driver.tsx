@@ -34,10 +34,6 @@ function Driver() {
       title="Routeline Driver"
       tag="Mobile · Flutter"
       description="The driver-side companion to the Routeline fleet dashboard. Log trip expenses in seconds — fully offline, sync when back on network."
-      gallery={[
-        { src: gal1, alt: "Driver using app in truck cabin", caption: "Logging fuel expense between stops" },
-        { src: gal2, alt: "Photographing a fuel receipt", caption: "Receipt capture at the pump — auto-attached to the entry" },
-      ]}
       caseStudy={{
         category: "Mobile App",
         scope: "Driver companion app",

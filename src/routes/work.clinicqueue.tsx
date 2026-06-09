@@ -47,11 +47,6 @@ function ClinicQueue() {
       tag="Healthcare bookings"
       description="Patients self-book a clinician, the clinic sees a live queue, and nobody waits on a phone line. Every booking persists to the database."
       cover={cover}
-      gallery={[
-        { src: cover, alt: "ClinicQueue cover", caption: "ClinicQueue — patient self-booking platform" },
-        { src: gal1, alt: "Clinic waiting room with queue board", caption: "Live queue board in the clinic reception" },
-        { src: gal2, alt: "Patient booking on phone", caption: "Patients self-book in under a minute" },
-      ]}
       caseStudy={{
         category: "Web App",
         scope: "Booking & scheduling platform",

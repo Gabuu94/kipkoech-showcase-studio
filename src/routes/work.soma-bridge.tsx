@@ -46,11 +46,6 @@ function Soma() {
       tag="Learning platform"
       description="Structured courses with live database-backed progress and quick competence checks. Built for SACCOs, NGOs and corporate skills programs."
       cover={cover}
-      gallery={[
-        { src: cover, alt: "Soma Bridge cover", caption: "Soma Bridge — learning platform" },
-        { src: gal1, alt: "Learning module on laptop", caption: "Course module with video and progress tracking" },
-        { src: gal2, alt: "Learner with certificate", caption: "Auto-issued certificate on cohort completion" },
-      ]}
       caseStudy={{
         category: "Web App",
         scope: "Learning management platform",

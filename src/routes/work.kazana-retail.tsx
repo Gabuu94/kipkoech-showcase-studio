@@ -35,11 +35,6 @@ function Kazana() {
       tag="POS · Inventory"
       description="Multi-outlet stock control with live database persistence and reorder signals — one screen instead of seven spreadsheets."
       cover={cover}
-      gallery={[
-        { src: cover, alt: "Kazana retail backend cover", caption: "Kazana Retail — multi-outlet POS backend" },
-        { src: gal1, alt: "Inventory dashboard on monitor", caption: "Head-office dashboard — every outlet, one screen" },
-        { src: gal2, alt: "Barcode scanning on shelves", caption: "Floor staff scanning SKUs into the central inventory" },
-      ]}
       caseStudy={{
         category: "Web App",
         scope: "POS backend & inventory",
