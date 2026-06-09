@@ -13,6 +13,10 @@ import logoKcb from "@/assets/logos/kcb.png";
 import logoStripe from "@/assets/logos/stripe.png";
 import logoPaystack from "@/assets/logos/paystack.png";
 import logoEtims from "@/assets/logos/etims.png";
+import logoMongoDB from "@/assets/logos/mongodb.png";
+import logoExpress from "@/assets/logos/express.png";
+import logoReact from "@/assets/logos/react.png";
+import logoNodeJS from "@/assets/logos/nodejs.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -65,7 +69,7 @@ const projects = [
 
 
 const capabilities = [
-  { title: "Backend", body: "Application logic, APIs, reporting, data modeling and operational workflows.", tags: ["PHP", "Laravel", "Node", "PostgreSQL", "REST APIs", "Reports"] },
+  { title: "Backend", body: "Application logic, APIs, reporting, data modeling and operational workflows.", tags: ["PHP", "Laravel", "Node", "Express", "MongoDB", "PostgreSQL", "REST APIs", "Reports"] },
   { title: "Frontend & Mobile", body: "Web interfaces and Flutter apps built around clarity, speed and real use.", tags: ["React", "Vue", "Flutter", "Tailwind", "Blade", "UI Systems"] },
   { title: "Business Domains", body: "Products shaped by operations, transactions and day-to-day business processes.", tags: ["SaaS", "POS", "HR", "Bookings", "Fleet", "AgriTech"] },
   { title: "Delivery", body: "The supporting practices that make releases steadier and systems easier to maintain.", tags: ["Git", "Docker", "Vercel", "Debugging", "Integrations", "Automation"] },
@@ -77,6 +81,13 @@ const integrations = [
   { name: "Stripe", logo: logoStripe },
   { name: "Paystack", logo: logoPaystack },
   { name: "eTIMS", logo: logoEtims },
+];
+
+const mernStack = [
+  { name: "MongoDB", logo: logoMongoDB },
+  { name: "Express", logo: logoExpress },
+  { name: "React", logo: logoReact },
+  { name: "Node.js", logo: logoNodeJS },
 ];
 
 function Index() {
@@ -325,6 +336,33 @@ function Index() {
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <a href="#contact" className="rounded-full bg-foreground px-5 py-2.5 text-xs font-bold tracking-[0.18em] text-background hover:bg-accent transition-colors">DISCUSS AN INTEGRATION</a>
+                <a href="#work" className="rounded-full border border-border px-5 py-2.5 text-xs font-bold tracking-[0.18em] hover:border-foreground transition-colors">VIEW RELATED WORK</a>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-10 rounded-3xl border border-border bg-card p-8 sm:p-12">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+              {mernStack.map((s) => (
+                <div key={s.name} className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-background p-5 transition-all hover:-translate-y-1 hover:shadow-md">
+                  <div className="flex h-16 w-full items-center justify-center">
+                    <img src={s.logo} alt={`${s.name} logo`} loading="lazy" width={200} height={80} className="max-h-14 w-auto object-contain" />
+                  </div>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-muted-foreground">{s.name}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-10 max-w-3xl">
+              <p className="eyebrow">Full-Stack JavaScript</p>
+              <h3 className="mt-3 font-serif text-3xl">
+                MERN stack builds from database to interface.
+              </h3>
+              <p className="mt-4 text-muted-foreground">
+                I build complete products with MongoDB, Express, React and Node.js —
+                from REST APIs and data modeling to reactive frontends and deployment.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a href="#contact" className="rounded-full bg-foreground px-5 py-2.5 text-xs font-bold tracking-[0.18em] text-background hover:bg-accent transition-colors">DISCUSS A BUILD</a>
                 <a href="#work" className="rounded-full border border-border px-5 py-2.5 text-xs font-bold tracking-[0.18em] hover:border-foreground transition-colors">VIEW RELATED WORK</a>
               </div>
             </div>
