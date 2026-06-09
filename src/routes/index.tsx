@@ -199,20 +199,27 @@ function Index() {
           <p className="eyebrow">Selected Work</p>
           <h2 className="mt-4 text-4xl sm:text-5xl">Web and platform apps</h2>
           <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {projects.map((p) => (
-              <Link to={p.slug} key={p.name} className="group block overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:shadow-lg">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={p.cover} alt={p.name} loading="lazy" width={1280} height={768} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                </div>
-                <div className="p-6">
+          {projects.map((p) => (
+              <div key={p.name} className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:shadow-lg">
+                <Link to={p.slug} className="block">
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img src={p.cover} alt={p.name} loading="lazy" width={1280} height={768} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  </div>
+                </Link>
+                <div className="flex flex-1 flex-col p-6">
                   <p className="eyebrow !text-muted-foreground">{p.tag}</p>
-                  <h3 className="mt-2 font-serif text-2xl">{p.name}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
-                  <div className="mt-4 flex items-center gap-2 text-xs font-semibold tracking-[0.18em] text-accent">
-                    OPEN DEMO <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  <Link to={p.slug} className="mt-2 font-serif text-2xl hover:text-accent transition-colors">{p.name}</Link>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    <Link to={p.slug} hash="case-study" className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-[11px] font-bold tracking-[0.18em] text-background hover:bg-accent transition-colors">
+                      CASE STUDY
+                    </Link>
+                    <Link to={p.slug} className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-[11px] font-bold tracking-[0.18em] hover:border-foreground transition-colors">
+                      OPEN DEMO <ArrowUpRight className="h-3.5 w-3.5" />
+                    </Link>
                   </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
 
