@@ -49,23 +49,23 @@ const services = [
 ];
 
 const projects = [
-  { tag: "Web App", name: "Ledgerly", slug: "/work/ledgerly", cover: coverLedgerly, body: "A bookkeeping platform for small businesses with invoicing, reconciliation and tax-ready reports." },
-  { tag: "Web App", name: "Shiftboard HRMS", slug: "/work/shiftboard", cover: coverShiftboard, body: "Attendance, payroll workflows and reporting for distributed teams across multiple branches." },
-  { tag: "Web App", name: "Routeline", slug: "/work/routeline", cover: coverRouteline, body: "Logistics dashboard for fleet expense tracking, fuel monitoring and driver performance." },
-  { tag: "Web App", name: "Kazana Retail", slug: "/work/kazana-retail", cover: coverKazana, body: "A SaaS POS backend handling stock, multi-outlet inventory and structured selling workflows." },
-  { tag: "Web App", name: "ClinicQueue", slug: "/work/clinicqueue", cover: coverClinic, body: "Patient booking platform with discovery, scheduling and clinician availability management." },
-  { tag: "Web App", name: "Soma Bridge", slug: "/work/soma-bridge", cover: coverSoma, body: "A learning platform combining structured content, assessments and integrations for skills training." },
+  { tag: "Bookkeeping SaaS", name: "Ledgerly", slug: "/work/ledgerly", cover: coverLedgerly, body: "Invoicing, reconciliation and tax-ready reports for small businesses — built around real bookkeeping workflows.", tags: ["Laravel", "PostgreSQL", "M-Pesa", "eTIMS"] },
+  { tag: "HR Platform", name: "Shiftboard HRMS", slug: "/work/shiftboard", cover: coverShiftboard, body: "Attendance, payroll workflows and reporting for distributed teams across multiple branches and shifts.", tags: ["Laravel", "Vue", "Payroll", "Reporting"] },
+  { tag: "Logistics Dashboard", name: "Routeline", slug: "/work/routeline", cover: coverRouteline, body: "Fleet expense tracking, fuel monitoring and driver performance — turning trip data into operating insight.", tags: ["Node", "Charts", "Fleet", "Geo"] },
+  { tag: "Retail POS Backend", name: "Kazana Retail", slug: "/work/kazana-retail", cover: coverKazana, body: "SaaS POS backend handling stock, multi-outlet inventory and structured selling across retail floors.", tags: ["Laravel", "POS", "Inventory", "Multi-tenant"] },
+  { tag: "Healthcare Booking", name: "ClinicQueue", slug: "/work/clinicqueue", cover: coverClinic, body: "Patient discovery, scheduling and clinician availability — built to cut queueing and no-shows.", tags: ["React", "Bookings", "SMS", "Calendar"] },
+  { tag: "Learning Platform", name: "Soma Bridge", slug: "/work/soma-bridge", cover: coverSoma, body: "Structured content, assessments and integrations for skills training across distributed learner cohorts.", tags: ["Laravel", "LMS", "Assessments", "API"] },
 ] as const;
 
-const mobile = [
-  { tag: "Mobile", name: "Kazana POS", slug: "/work/kazana-pos", body: "A Flutter POS app for structured selling, checkout flows and stock visibility on the floor." },
-  { tag: "Mobile", name: "Shiftboard Field", slug: "/work/shiftboard-field", body: "Mobile attendance and field-coordination app connected to the Shiftboard HR backend." },
-  { tag: "Mobile", name: "Routeline Driver", slug: "/work/routeline-driver", body: "Driver-side companion for expense logging, trip notes and offline-friendly capture." },
-  { tag: "Mobile", name: "Kiosk Check-In", slug: "/work/kiosk-checkin", body: "Shared-device attendance kiosk for multiple users checking in at one station." },
-  { tag: "Mobile", name: "FarmTrack", slug: "/work/farmtrack", body: "A Flutter app for smallholder farmers to log crop activity, inputs and yields with full offline support." },
-  { tag: "Mobile", name: "MediRemind", slug: "/work/mediremind", body: "Medication reminder and adherence tracker with caretaker sync and missed-dose alerts." },
-  { tag: "Mobile", name: "FieldAudit", slug: "/work/fieldaudit", body: "On-site inspection and audit checklist app with photo evidence, signatures and offline sync." },
-] as const;
+const mobile: { tag: string; name: string; slug: string; body: string; tags: string[]; Icon: LucideIcon; gradient: string }[] = [
+  { tag: "Flutter · POS", name: "Kazana POS", slug: "/work/kazana-pos", body: "On-the-floor selling, checkout flows and stock visibility wired to the Kazana retail backend.", tags: ["Flutter", "Offline", "Printer", "Stock"], Icon: ShoppingCart, gradient: "from-amber-500/80 to-rose-500/80" },
+  { tag: "Flutter · HR", name: "Shiftboard Field", slug: "/work/shiftboard-field", body: "Mobile attendance and field coordination connected to the Shiftboard HR backend in real time.", tags: ["Flutter", "Geo", "Attendance", "Sync"], Icon: Users, gradient: "from-sky-500/80 to-indigo-500/80" },
+  { tag: "Flutter · Fleet", name: "Routeline Driver", slug: "/work/routeline-driver", body: "Driver companion for expense logging, trip notes and offline-friendly capture during long routes.", tags: ["Flutter", "Offline", "Fuel", "Trips"], Icon: Truck, gradient: "from-emerald-500/80 to-teal-600/80" },
+  { tag: "Flutter · Kiosk", name: "Kiosk Check-In", slug: "/work/kiosk-checkin", body: "Shared-device attendance kiosk letting multiple users check in fast at one fixed station.", tags: ["Flutter", "Kiosk", "PIN", "Sync"], Icon: ScanLine, gradient: "from-violet-500/80 to-fuchsia-500/80" },
+  { tag: "Flutter · AgriTech", name: "FarmTrack", slug: "/work/farmtrack", body: "Smallholder farmer logging for crop activity, inputs and yields — fully offline-first on low-end devices.", tags: ["Flutter", "Offline", "Agri", "Reports"], Icon: Sprout, gradient: "from-lime-500/80 to-emerald-600/80" },
+  { tag: "Flutter · Health", name: "MediRemind", slug: "/work/mediremind", body: "Medication reminders and adherence tracking with caretaker sync and missed-dose alerts.", tags: ["Flutter", "Reminders", "Adherence", "Sync"], Icon: Pill, gradient: "from-pink-500/80 to-rose-600/80" },
+  { tag: "Flutter · Compliance", name: "FieldAudit", slug: "/work/fieldaudit", body: "On-site inspection checklists with photo evidence, signatures and offline-first sync.", tags: ["Flutter", "Audits", "Photos", "Offline"], Icon: ClipboardCheck, gradient: "from-orange-500/80 to-amber-600/80" },
+];
 
 const capabilities = [
   { title: "Backend", body: "Application logic, APIs, reporting, data modeling and operational workflows.", tags: ["PHP", "Laravel", "Node", "PostgreSQL", "REST APIs", "Reports"] },
