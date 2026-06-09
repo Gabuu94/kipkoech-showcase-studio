@@ -83,6 +83,13 @@ const integrations = [
   { name: "eTIMS", logo: logoEtims },
 ];
 
+const mernStack = [
+  { name: "MongoDB", logo: logoMongoDB },
+  { name: "Express", logo: logoExpress },
+  { name: "React", logo: logoReact },
+  { name: "Node.js", logo: logoNodeJS },
+];
+
 function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
