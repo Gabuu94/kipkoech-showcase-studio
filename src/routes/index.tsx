@@ -340,6 +340,33 @@ function Index() {
               </div>
             </div>
           </div>
+
+          <div className="mt-10 rounded-3xl border border-border bg-card p-8 sm:p-12">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+              {mernStack.map((s) => (
+                <div key={s.name} className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-background p-5 transition-all hover:-translate-y-1 hover:shadow-md">
+                  <div className="flex h-16 w-full items-center justify-center">
+                    <img src={s.logo} alt={`${s.name} logo`} loading="lazy" width={200} height={80} className="max-h-14 w-auto object-contain" />
+                  </div>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-muted-foreground">{s.name}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-10 max-w-3xl">
+              <p className="eyebrow">Full-Stack JavaScript</p>
+              <h3 className="mt-3 font-serif text-3xl">
+                MERN stack builds from database to interface.
+              </h3>
+              <p className="mt-4 text-muted-foreground">
+                I build complete products with MongoDB, Express, React and Node.js —
+                from REST APIs and data modeling to reactive frontends and deployment.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a href="#contact" className="rounded-full bg-foreground px-5 py-2.5 text-xs font-bold tracking-[0.18em] text-background hover:bg-accent transition-colors">DISCUSS A BUILD</a>
+                <a href="#work" className="rounded-full border border-border px-5 py-2.5 text-xs font-bold tracking-[0.18em] hover:border-foreground transition-colors">VIEW RELATED WORK</a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
