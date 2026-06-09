@@ -100,7 +100,7 @@ function Index() {
               I build software that helps teams ship with less friction.
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
-              Full-stack engineer with 6+ years building Laravel and Node platforms,
+              Full-stack engineer with 3 years building Laravel and Node platforms,
               Flutter apps, dashboards and integrations across HR, retail, logistics
               and SaaS products.
             </p>
