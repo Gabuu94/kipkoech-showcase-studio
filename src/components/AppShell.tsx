@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowUpRight, BadgeCheck, Quote, Sparkles } from "lucide-react";
 import type { ReactNode } from "react";
-import { Gallery, type GalleryItem } from "@/components/Gallery";
+
 
 export type CaseStudyData = {
   category: string;
@@ -30,7 +30,7 @@ export function AppShell({
   children,
   cover,
   caseStudy,
-  gallery,
+  
 }: {
   title: string;
   tag: string;
@@ -38,7 +38,7 @@ export function AppShell({
   children: ReactNode;
   cover?: string;
   caseStudy?: CaseStudyData;
-  gallery?: GalleryItem[];
+  
 }) {
   return (
     <div className="min-h-screen">
@@ -244,7 +244,7 @@ export function AppShell({
         </section>
       )}
 
-      {gallery && gallery.length > 0 && <Gallery items={gallery} title="Screenshots & moments" />}
+      
 
       <section id="demo" className="px-4 pt-16 pb-24">
         <div className="mx-auto max-w-6xl">
