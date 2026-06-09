@@ -85,7 +85,7 @@ function Index() {
               <li key={l.href}><a href={l.href} className="hover:text-accent transition-colors">{l.label.toUpperCase()}</a></li>
             ))}
           </ul>
-          <a href="#contact" className="rounded-full bg-foreground px-4 py-2.5 text-[11px] font-bold tracking-[0.18em] text-background hover:bg-accent transition-colors">
+          <a href="tel:254797585941" className="rounded-full bg-foreground px-4 py-2.5 text-[11px] font-bold tracking-[0.18em] text-background hover:bg-accent transition-colors">
             BOOK A CALL
           </a>
         </nav>
