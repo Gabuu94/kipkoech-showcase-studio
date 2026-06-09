@@ -7,6 +7,11 @@ import coverRouteline from "@/assets/cover-routeline.jpg";
 import coverKazana from "@/assets/cover-kazana.jpg";
 import coverClinic from "@/assets/cover-clinic.jpg";
 import coverSoma from "@/assets/cover-soma.jpg";
+import logoMpesa from "@/assets/logos/mpesa.png";
+import logoKcb from "@/assets/logos/kcb.png";
+import logoStripe from "@/assets/logos/stripe.png";
+import logoPaystack from "@/assets/logos/paystack.png";
+import logoEtims from "@/assets/logos/etims.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
