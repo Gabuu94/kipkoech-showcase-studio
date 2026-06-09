@@ -69,7 +69,7 @@ const projects = [
 
 
 const capabilities = [
-  { title: "Backend", body: "Application logic, APIs, reporting, data modeling and operational workflows.", tags: ["PHP", "Laravel", "Node", "PostgreSQL", "REST APIs", "Reports"] },
+  { title: "Backend", body: "Application logic, APIs, reporting, data modeling and operational workflows.", tags: ["PHP", "Laravel", "Node", "Express", "MongoDB", "PostgreSQL", "REST APIs", "Reports"] },
   { title: "Frontend & Mobile", body: "Web interfaces and Flutter apps built around clarity, speed and real use.", tags: ["React", "Vue", "Flutter", "Tailwind", "Blade", "UI Systems"] },
   { title: "Business Domains", body: "Products shaped by operations, transactions and day-to-day business processes.", tags: ["SaaS", "POS", "HR", "Bookings", "Fleet", "AgriTech"] },
   { title: "Delivery", body: "The supporting practices that make releases steadier and systems easier to maintain.", tags: ["Git", "Docker", "Vercel", "Debugging", "Integrations", "Automation"] },
