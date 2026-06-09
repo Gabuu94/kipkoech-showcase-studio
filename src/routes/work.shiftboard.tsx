@@ -5,8 +5,6 @@ import { AppShell, Button, Card, Stat } from "@/components/AppShell";
 import { Donut, Bars } from "@/components/Charts";
 import { fetchStaff, toggleStaff, type Staff } from "@/lib/demo-api";
 import cover from "@/assets/cover-shiftboard.jpg";
-import gal1 from "@/assets/gallery/shiftboard-1.jpg";
-import gal2 from "@/assets/gallery/shiftboard-2.jpg";
 import { Users, Building2, Clock } from "lucide-react";
 
 export const Route = createFileRoute("/work/shiftboard")({

@@ -2,8 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { AppShell, Card } from "@/components/AppShell";
 import { Fingerprint, ShieldCheck } from "lucide-react";
-import gal1 from "@/assets/gallery/kiosk-1.jpg";
-import gal2 from "@/assets/gallery/kiosk-2.jpg";
 
 export const Route = createFileRoute("/work/kiosk-checkin")({
   head: () => ({ meta: [{ title: "Kiosk Check-In — shared device" }] }),

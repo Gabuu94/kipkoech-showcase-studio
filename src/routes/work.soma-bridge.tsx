@@ -5,8 +5,6 @@ import { AppShell, Button, Card, Stat } from "@/components/AppShell";
 import { Donut } from "@/components/Charts";
 import { fetchCourses } from "@/lib/demo-api";
 import cover from "@/assets/cover-soma.jpg";
-import gal1 from "@/assets/gallery/soma-1.jpg";
-import gal2 from "@/assets/gallery/soma-2.jpg";
 import { BookOpen, GraduationCap, Award } from "lucide-react";
 
 export const Route = createFileRoute("/work/soma-bridge")({

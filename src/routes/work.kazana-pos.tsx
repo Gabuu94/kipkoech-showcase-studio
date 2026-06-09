@@ -2,8 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { AppShell, Button, Card } from "@/components/AppShell";
 import { Smartphone, Wifi, BadgeCheck, ShoppingBasket } from "lucide-react";
-import gal1 from "@/assets/gallery/kazana-pos-1.jpg";
-import gal2 from "@/assets/gallery/kazana-pos-2.jpg";
 
 export const Route = createFileRoute("/work/kazana-pos")({
   head: () => ({ meta: [{ title: "Kazana POS — mobile checkout" }] }),

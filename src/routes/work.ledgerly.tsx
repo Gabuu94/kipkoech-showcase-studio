@@ -5,8 +5,6 @@ import { AppShell, Button, Card, Input, Select, Stat } from "@/components/AppShe
 import { Sparkline, Bars } from "@/components/Charts";
 import { fetchLedger, insertLedger, type LedgerTx } from "@/lib/demo-api";
 import cover from "@/assets/cover-ledgerly.jpg";
-import gal1 from "@/assets/gallery/ledgerly-1.jpg";
-import gal2 from "@/assets/gallery/ledgerly-2.jpg";
 import { TrendingUp, TrendingDown, Wallet } from "lucide-react";
 
 export const Route = createFileRoute("/work/ledgerly")({

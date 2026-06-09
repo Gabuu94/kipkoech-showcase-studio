@@ -2,8 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { AppShell, Card } from "@/components/AppShell";
 import { MapPin, Wifi } from "lucide-react";
-import gal1 from "@/assets/gallery/shiftboard-field-1.jpg";
-import gal2 from "@/assets/gallery/shiftboard-field-2.jpg";
 
 export const Route = createFileRoute("/work/shiftboard-field")({
   head: () => ({ meta: [{ title: "Shiftboard Field — mobile attendance" }] }),

@@ -4,8 +4,6 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { AppShell, Button, Card, Input, Select, Stat } from "@/components/AppShell";
 import { fetchClinicians, fetchAppointments, bookAppointment } from "@/lib/demo-api";
 import cover from "@/assets/cover-clinic.jpg";
-import gal1 from "@/assets/gallery/clinic-1.jpg";
-import gal2 from "@/assets/gallery/clinic-2.jpg";
 import { Clock, Stethoscope, CalendarCheck } from "lucide-react";
 
 export const Route = createFileRoute("/work/clinicqueue")({

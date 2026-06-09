@@ -5,8 +5,6 @@ import { AppShell, Card, Stat } from "@/components/AppShell";
 import { Bars, Sparkline, MapMock } from "@/components/Charts";
 import { fetchTrucks } from "@/lib/demo-api";
 import cover from "@/assets/cover-routeline.jpg";
-import gal1 from "@/assets/gallery/routeline-1.jpg";
-import gal2 from "@/assets/gallery/routeline-2.jpg";
 import { Fuel, Truck, AlertCircle, CheckCircle2 } from "lucide-react";
 
 export const Route = createFileRoute("/work/routeline")({

@@ -5,8 +5,6 @@ import { AppShell, Button, Card, Stat } from "@/components/AppShell";
 import { Bars, Donut } from "@/components/Charts";
 import { fetchKazana, restockKazana } from "@/lib/demo-api";
 import cover from "@/assets/cover-kazana.jpg";
-import gal1 from "@/assets/gallery/kazana-retail-1.jpg";
-import gal2 from "@/assets/gallery/kazana-retail-2.jpg";
 import { AlertTriangle, Package, Store } from "lucide-react";
 
 export const Route = createFileRoute("/work/kazana-retail")({

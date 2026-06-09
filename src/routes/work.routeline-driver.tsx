@@ -2,8 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { AppShell, Button, Card, Input, Select } from "@/components/AppShell";
 import { Fuel, MapPin, Receipt, Wifi, WifiOff } from "lucide-react";
-import gal1 from "@/assets/gallery/routeline-driver-1.jpg";
-import gal2 from "@/assets/gallery/routeline-driver-2.jpg";
 
 export const Route = createFileRoute("/work/routeline-driver")({
   head: () => ({ meta: [{ title: "Routeline Driver — companion" }] }),
