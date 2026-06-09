@@ -204,15 +204,22 @@ function Index() {
           <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((p) => (
               <div key={p.name} className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:shadow-lg">
-                <Link to={p.slug} className="block">
+                <Link to={p.slug} className="relative block">
                   <div className="aspect-[4/3] overflow-hidden">
                     <img src={p.cover} alt={p.name} loading="lazy" width={1280} height={768} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                   </div>
+                  <span className="absolute left-3 top-3 rounded-full bg-background/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-foreground backdrop-blur">
+                    {p.tag}
+                  </span>
                 </Link>
                 <div className="flex flex-1 flex-col p-6">
-                  <p className="eyebrow !text-muted-foreground">{p.tag}</p>
-                  <Link to={p.slug} className="mt-2 font-serif text-2xl hover:text-accent transition-colors">{p.name}</Link>
+                  <Link to={p.slug} className="font-serif text-2xl hover:text-accent transition-colors">{p.name}</Link>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
+                  <div className="mt-4 flex flex-wrap gap-1.5">
+                    {p.tags.map((t) => (
+                      <span key={t} className="rounded-full border border-border bg-background px-2.5 py-1 text-[10px] font-semibold tracking-wide text-muted-foreground">{t}</span>
+                    ))}
+                  </div>
                   <div className="mt-5 flex flex-wrap gap-2">
                     <Link to={p.slug} hash="case-study" className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-[11px] font-bold tracking-[0.18em] text-background hover:bg-accent transition-colors">
                       CASE STUDY
@@ -232,13 +239,28 @@ function Index() {
           {mobile.map((p) => (
               <div key={p.name} className="group flex flex-col rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-lg">
                 <Link to={p.slug} className="block">
-                  <div className="aspect-[3/4] rounded-xl bg-gradient-to-br from-secondary to-muted relative overflow-hidden">
-                    <div className="absolute inset-0 grid place-items-center font-serif text-4xl text-muted-foreground/40">{p.name.charAt(0)}</div>
+                  <div className={`aspect-[3/4] rounded-xl bg-gradient-to-br ${p.gradient} relative overflow-hidden`}>
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.25),transparent_60%)]" />
+                    <div className="absolute inset-x-4 top-4 flex items-center justify-between text-background/90">
+                      <span className="rounded-full bg-background/20 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.2em] backdrop-blur">{p.tag.split(" · ")[1] ?? p.tag}</span>
+                      <span className="h-2 w-2 rounded-full bg-background/80" />
+                    </div>
+                    <div className="absolute inset-0 grid place-items-center">
+                      <p.Icon className="h-16 w-16 text-background drop-shadow-lg" strokeWidth={1.5} />
+                    </div>
+                    <div className="absolute inset-x-4 bottom-4 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-background/90">
+                      <span className="h-1.5 w-1.5 rounded-full bg-background" /> Flutter
+                    </div>
                   </div>
                 </Link>
                 <p className="eyebrow mt-5 !text-muted-foreground">{p.tag}</p>
                 <Link to={p.slug} className="mt-2 font-serif text-xl hover:text-accent transition-colors">{p.name}</Link>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
+                <div className="mt-4 flex flex-wrap gap-1.5">
+                  {p.tags.map((t) => (
+                    <span key={t} className="rounded-full border border-border bg-background px-2.5 py-1 text-[10px] font-semibold tracking-wide text-muted-foreground">{t}</span>
+                  ))}
+                </div>
                 <div className="mt-5 flex flex-wrap gap-2">
                   <Link to={p.slug} hash="case-study" className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-[11px] font-bold tracking-[0.18em] text-background hover:bg-accent transition-colors">
                     CASE STUDY
