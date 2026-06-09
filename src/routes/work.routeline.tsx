@@ -5,6 +5,8 @@ import { AppShell, Card, Stat } from "@/components/AppShell";
 import { Bars, Sparkline, MapMock } from "@/components/Charts";
 import { fetchTrucks } from "@/lib/demo-api";
 import cover from "@/assets/cover-routeline.jpg";
+import gal1 from "@/assets/gallery/routeline-1.jpg";
+import gal2 from "@/assets/gallery/routeline-2.jpg";
 import { Fuel, Truck, AlertCircle, CheckCircle2 } from "lucide-react";
 
 export const Route = createFileRoute("/work/routeline")({
@@ -30,6 +32,11 @@ function Routeline() {
       tag="Logistics ops"
       description="Fleet, fuel and driver performance backed by Postgres. Real rows, real totals, real anomaly detection — not a polished mock."
       cover={cover}
+      gallery={[
+        { src: cover, alt: "Routeline cover", caption: "Routeline — fleet operations dashboard" },
+        { src: gal1, alt: "Fleet ops dashboard on widescreen", caption: "Live fleet view with map and KPI tiles" },
+        { src: gal2, alt: "Logistics truck on highway", caption: "One of 24 rigs tracked through the system" },
+      ]}
       caseStudy={{
         category: "Web App",
         scope: "Fleet operations dashboard",
