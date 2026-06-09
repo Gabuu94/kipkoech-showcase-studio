@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Rocket, Mail, ArrowUpRight, Github, Linkedin, Twitter, Phone, MessageCircle } from "lucide-react";
+import { useState } from "react";
+import { Rocket, Mail, ArrowUpRight, Github, Linkedin, Twitter, Phone, MessageCircle, Menu, X } from "lucide-react";
 import heroImg from "@/assets/hero.png";
 import coverLedgerly from "@/assets/cover-ledgerly.jpg";
 import coverShiftboard from "@/assets/cover-shiftboard.jpg";
@@ -79,16 +80,17 @@ const integrations = [
 ];
 
 function Index() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="min-h-screen">
       {/* NAV */}
       <header className="sticky top-4 z-50 px-4">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-border bg-card/80 px-4 py-3 shadow-sm backdrop-blur">
-          <a href="#" className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-foreground font-serif text-sm font-semibold text-background">GK</span>
-            <span className="hidden sm:flex flex-col leading-tight">
-              <span className="text-xs font-bold tracking-[0.18em]">GABRIEL KIPKOECH</span>
-              <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Software Engineer</span>
+        <nav className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-border bg-card/80 px-3 py-2.5 sm:px-4 sm:py-3 shadow-sm backdrop-blur">
+          <a href="#" className="flex items-center gap-3 min-w-0">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-foreground font-serif text-sm font-semibold text-background">GK</span>
+            <span className="flex flex-col leading-tight min-w-0">
+              <span className="text-[11px] sm:text-xs font-bold tracking-[0.18em] truncate">GABRIEL KIPKOECH</span>
+              <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground truncate">Software Engineer</span>
             </span>
           </a>
           <ul className="hidden md:flex items-center gap-6 text-xs font-semibold tracking-[0.18em]">
@@ -96,10 +98,48 @@ function Index() {
               <li key={l.href}><a href={l.href} className="hover:text-accent transition-colors">{l.label.toUpperCase()}</a></li>
             ))}
           </ul>
-          <a href="tel:254797585941" className="rounded-full bg-foreground px-4 py-2.5 text-[11px] font-bold tracking-[0.18em] text-background hover:bg-accent transition-colors">
-            BOOK A CALL
-          </a>
+          <div className="flex items-center gap-2">
+            <a href="tel:254797585941" className="hidden md:inline-flex rounded-full bg-foreground px-4 py-2.5 text-[11px] font-bold tracking-[0.18em] text-background hover:bg-accent transition-colors">
+              BOOK A CALL
+            </a>
+            <button
+              type="button"
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen((v) => !v)}
+              className="md:hidden flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border bg-background hover:border-foreground transition-colors"
+            >
+              {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
         </nav>
+        {menuOpen && (
+          <div className="md:hidden mx-auto mt-3 max-w-6xl rounded-3xl border border-border bg-card/95 p-3 shadow-lg backdrop-blur">
+            <ul className="flex flex-col gap-2">
+              {navLinks.map((l) => (
+                <li key={l.href}>
+                  <a
+                    href={l.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="flex items-center justify-between rounded-2xl border border-border bg-background px-5 py-4 text-xs font-bold tracking-[0.18em] hover:border-foreground transition-colors"
+                  >
+                    {l.label.toUpperCase()}
+                    <ArrowUpRight className="h-4 w-4 text-accent" />
+                  </a>
+                </li>
+              ))}
+              <li>
+                <a
+                  href="tel:254797585941"
+                  onClick={() => setMenuOpen(false)}
+                  className="flex items-center justify-center gap-2 rounded-2xl bg-foreground px-5 py-4 text-xs font-bold tracking-[0.18em] text-background hover:bg-accent transition-colors"
+                >
+                  <Phone className="h-4 w-4" /> BOOK A CALL
+                </a>
+              </li>
+            </ul>
+          </div>
+        )}
       </header>
 
       {/* HERO */}
