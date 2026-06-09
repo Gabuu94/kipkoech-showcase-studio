@@ -4,8 +4,6 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { AppShell, Button, Card, Input, Select, Stat } from "@/components/AppShell";
 import { fetchClinicians, fetchAppointments, bookAppointment } from "@/lib/demo-api";
 import cover from "@/assets/cover-clinic.jpg";
-import gal1 from "@/assets/gallery/clinic-1.jpg";
-import gal2 from "@/assets/gallery/clinic-2.jpg";
 import { Clock, Stethoscope, CalendarCheck } from "lucide-react";
 
 export const Route = createFileRoute("/work/clinicqueue")({
@@ -49,11 +47,6 @@ function ClinicQueue() {
       tag="Healthcare bookings"
       description="Patients self-book a clinician, the clinic sees a live queue, and nobody waits on a phone line. Every booking persists to the database."
       cover={cover}
-      gallery={[
-        { src: cover, alt: "ClinicQueue cover", caption: "ClinicQueue — patient self-booking platform" },
-        { src: gal1, alt: "Clinic waiting room with queue board", caption: "Live queue board in the clinic reception" },
-        { src: gal2, alt: "Patient booking on phone", caption: "Patients self-book in under a minute" },
-      ]}
       caseStudy={{
         category: "Web App",
         scope: "Booking & scheduling platform",

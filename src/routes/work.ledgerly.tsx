@@ -5,8 +5,6 @@ import { AppShell, Button, Card, Input, Select, Stat } from "@/components/AppShe
 import { Sparkline, Bars } from "@/components/Charts";
 import { fetchLedger, insertLedger, type LedgerTx } from "@/lib/demo-api";
 import cover from "@/assets/cover-ledgerly.jpg";
-import gal1 from "@/assets/gallery/ledgerly-1.jpg";
-import gal2 from "@/assets/gallery/ledgerly-2.jpg";
 import { TrendingUp, TrendingDown, Wallet } from "lucide-react";
 
 export const Route = createFileRoute("/work/ledgerly")({
@@ -64,11 +62,6 @@ function Ledgerly() {
       tag="Bookkeeping SaaS"
       description="Lightweight ledger for small businesses. Every entry persists to a live database, so books stay consistent across the whole team."
       cover={cover}
-      gallery={[
-        { src: cover, alt: "Ledgerly dashboard cover", caption: "Hero — Ledgerly bookkeeping dashboard" },
-        { src: gal1, alt: "Ledgerly dashboard on laptop", caption: "Live P&L dashboard with category charts" },
-        { src: gal2, alt: "Ledgerly mobile invoice", caption: "Mobile invoice view — same data, on the go" },
-      ]}
       caseStudy={{
         category: "Web App",
         scope: "SaaS bookkeeping platform",

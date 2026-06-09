@@ -5,8 +5,6 @@ import { AppShell, Button, Card, Stat } from "@/components/AppShell";
 import { Donut } from "@/components/Charts";
 import { fetchCourses } from "@/lib/demo-api";
 import cover from "@/assets/cover-soma.jpg";
-import gal1 from "@/assets/gallery/soma-1.jpg";
-import gal2 from "@/assets/gallery/soma-2.jpg";
 import { BookOpen, GraduationCap, Award } from "lucide-react";
 
 export const Route = createFileRoute("/work/soma-bridge")({
@@ -48,11 +46,6 @@ function Soma() {
       tag="Learning platform"
       description="Structured courses with live database-backed progress and quick competence checks. Built for SACCOs, NGOs and corporate skills programs."
       cover={cover}
-      gallery={[
-        { src: cover, alt: "Soma Bridge cover", caption: "Soma Bridge — learning platform" },
-        { src: gal1, alt: "Learning module on laptop", caption: "Course module with video and progress tracking" },
-        { src: gal2, alt: "Learner with certificate", caption: "Auto-issued certificate on cohort completion" },
-      ]}
       caseStudy={{
         category: "Web App",
         scope: "Learning management platform",

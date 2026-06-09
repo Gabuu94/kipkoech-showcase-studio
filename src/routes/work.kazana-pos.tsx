@@ -2,8 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { AppShell, Button, Card } from "@/components/AppShell";
 import { Smartphone, Wifi, BadgeCheck, ShoppingBasket } from "lucide-react";
-import gal1 from "@/assets/gallery/kazana-pos-1.jpg";
-import gal2 from "@/assets/gallery/kazana-pos-2.jpg";
 
 export const Route = createFileRoute("/work/kazana-pos")({
   head: () => ({ meta: [{ title: "Kazana POS — mobile checkout" }] }),
@@ -48,10 +46,6 @@ function Pos() {
       title="Kazana POS"
       tag="Mobile · Flutter"
       description="Flutter checkout on the shop floor. Tap to add, swipe to total, M-Pesa or cash on the way out — every sale syncs to inventory in real time."
-      gallery={[
-        { src: gal1, alt: "Cashier using POS tablet", caption: "Cashier ringing up groceries on the Flutter terminal" },
-        { src: gal2, alt: "POS product grid close-up", caption: "Floor-friendly product grid with KES pricing" },
-      ]}
       caseStudy={{
         category: "Mobile App",
         scope: "Flutter POS terminal",

@@ -5,8 +5,6 @@ import { AppShell, Button, Card, Stat } from "@/components/AppShell";
 import { Bars, Donut } from "@/components/Charts";
 import { fetchKazana, restockKazana } from "@/lib/demo-api";
 import cover from "@/assets/cover-kazana.jpg";
-import gal1 from "@/assets/gallery/kazana-retail-1.jpg";
-import gal2 from "@/assets/gallery/kazana-retail-2.jpg";
 import { AlertTriangle, Package, Store } from "lucide-react";
 
 export const Route = createFileRoute("/work/kazana-retail")({
@@ -37,11 +35,6 @@ function Kazana() {
       tag="POS · Inventory"
       description="Multi-outlet stock control with live database persistence and reorder signals — one screen instead of seven spreadsheets."
       cover={cover}
-      gallery={[
-        { src: cover, alt: "Kazana retail backend cover", caption: "Kazana Retail — multi-outlet POS backend" },
-        { src: gal1, alt: "Inventory dashboard on monitor", caption: "Head-office dashboard — every outlet, one screen" },
-        { src: gal2, alt: "Barcode scanning on shelves", caption: "Floor staff scanning SKUs into the central inventory" },
-      ]}
       caseStudy={{
         category: "Web App",
         scope: "POS backend & inventory",

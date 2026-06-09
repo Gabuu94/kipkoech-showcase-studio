@@ -2,8 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { AppShell, Button, Card, Input, Select } from "@/components/AppShell";
 import { Fuel, MapPin, Receipt, Wifi, WifiOff } from "lucide-react";
-import gal1 from "@/assets/gallery/routeline-driver-1.jpg";
-import gal2 from "@/assets/gallery/routeline-driver-2.jpg";
 
 export const Route = createFileRoute("/work/routeline-driver")({
   head: () => ({ meta: [{ title: "Routeline Driver — companion" }] }),
@@ -36,10 +34,6 @@ function Driver() {
       title="Routeline Driver"
       tag="Mobile · Flutter"
       description="The driver-side companion to the Routeline fleet dashboard. Log trip expenses in seconds — fully offline, sync when back on network."
-      gallery={[
-        { src: gal1, alt: "Driver using app in truck cabin", caption: "Logging fuel expense between stops" },
-        { src: gal2, alt: "Photographing a fuel receipt", caption: "Receipt capture at the pump — auto-attached to the entry" },
-      ]}
       caseStudy={{
         category: "Mobile App",
         scope: "Driver companion app",
