@@ -79,7 +79,13 @@ const capabilities = [
   { title: "Delivery", body: "The supporting practices that make releases steadier and systems easier to maintain.", tags: ["Git", "Docker", "Vercel", "Debugging", "Integrations", "Automation"] },
 ];
 
-const integrations = ["M-Pesa Daraja", "KCB Buni", "Stripe", "Paystack", "eTIMS"];
+const integrations = [
+  { name: "M-Pesa Daraja", logo: logoMpesa },
+  { name: "KCB Buni", logo: logoKcb },
+  { name: "Stripe", logo: logoStripe },
+  { name: "Paystack", logo: logoPaystack },
+  { name: "eTIMS", logo: logoEtims },
+];
 
 function Index() {
   return (
