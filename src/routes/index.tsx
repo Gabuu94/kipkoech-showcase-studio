@@ -1,6 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Rocket, Mail, ArrowUpRight, Github, Linkedin, Twitter } from "lucide-react";
 import heroImg from "@/assets/hero.png";
+import coverLedgerly from "@/assets/cover-ledgerly.jpg";
+import coverShiftboard from "@/assets/cover-shiftboard.jpg";
+import coverRouteline from "@/assets/cover-routeline.jpg";
+import coverKazana from "@/assets/cover-kazana.jpg";
+import coverClinic from "@/assets/cover-clinic.jpg";
+import coverSoma from "@/assets/cover-soma.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -43,12 +49,12 @@ const services = [
 ];
 
 const projects = [
-  { tag: "Web App", name: "Ledgerly", slug: "/work/ledgerly", body: "A bookkeeping platform for small businesses with invoicing, reconciliation and tax-ready reports." },
-  { tag: "Web App", name: "Shiftboard HRMS", slug: "/work/shiftboard", body: "Attendance, payroll workflows and reporting for distributed teams across multiple branches." },
-  { tag: "Web App", name: "Routeline", slug: "/work/routeline", body: "Logistics dashboard for fleet expense tracking, fuel monitoring and driver performance." },
-  { tag: "Web App", name: "Kazana Retail", slug: "/work/kazana-retail", body: "A SaaS POS backend handling stock, multi-outlet inventory and structured selling workflows." },
-  { tag: "Web App", name: "ClinicQueue", slug: "/work/clinicqueue", body: "Patient booking platform with discovery, scheduling and clinician availability management." },
-  { tag: "Web App", name: "Soma Bridge", slug: "/work/soma-bridge", body: "A learning platform combining structured content, assessments and integrations for skills training." },
+  { tag: "Web App", name: "Ledgerly", slug: "/work/ledgerly", cover: coverLedgerly, body: "A bookkeeping platform for small businesses with invoicing, reconciliation and tax-ready reports." },
+  { tag: "Web App", name: "Shiftboard HRMS", slug: "/work/shiftboard", cover: coverShiftboard, body: "Attendance, payroll workflows and reporting for distributed teams across multiple branches." },
+  { tag: "Web App", name: "Routeline", slug: "/work/routeline", cover: coverRouteline, body: "Logistics dashboard for fleet expense tracking, fuel monitoring and driver performance." },
+  { tag: "Web App", name: "Kazana Retail", slug: "/work/kazana-retail", cover: coverKazana, body: "A SaaS POS backend handling stock, multi-outlet inventory and structured selling workflows." },
+  { tag: "Web App", name: "ClinicQueue", slug: "/work/clinicqueue", cover: coverClinic, body: "Patient booking platform with discovery, scheduling and clinician availability management." },
+  { tag: "Web App", name: "Soma Bridge", slug: "/work/soma-bridge", cover: coverSoma, body: "A learning platform combining structured content, assessments and integrations for skills training." },
 ] as const;
 
 const mobile = [
@@ -194,15 +200,17 @@ function Index() {
           <h2 className="mt-4 text-4xl sm:text-5xl">Web and platform apps</h2>
           <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((p) => (
-              <Link to={p.slug} key={p.name} className="group block rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-lg">
-                <div className="aspect-[4/3] rounded-xl bg-gradient-to-br from-secondary to-muted relative overflow-hidden">
-                  <div className="absolute inset-0 grid place-items-center font-serif text-4xl text-muted-foreground/40">{p.name.charAt(0)}</div>
+              <Link to={p.slug} key={p.name} className="group block overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:shadow-lg">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img src={p.cover} alt={p.name} loading="lazy" width={1280} height={768} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
-                <p className="eyebrow mt-5 !text-muted-foreground">{p.tag}</p>
-                <h3 className="mt-2 font-serif text-2xl">{p.name}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
-                <div className="mt-4 flex items-center gap-2 text-xs font-semibold tracking-[0.18em] text-accent">
-                  OPEN DEMO <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                <div className="p-6">
+                  <p className="eyebrow !text-muted-foreground">{p.tag}</p>
+                  <h3 className="mt-2 font-serif text-2xl">{p.name}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
+                  <div className="mt-4 flex items-center gap-2 text-xs font-semibold tracking-[0.18em] text-accent">
+                    OPEN DEMO <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  </div>
                 </div>
               </Link>
             ))}

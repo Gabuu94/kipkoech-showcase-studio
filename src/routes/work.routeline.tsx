@@ -1,57 +1,58 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { AppShell, Card, Stat } from "@/components/AppShell";
+import { fetchTrucks } from "@/lib/demo-api";
+import cover from "@/assets/cover-routeline.jpg";
 
 export const Route = createFileRoute("/work/routeline")({
   head: () => ({ meta: [{ title: "Routeline — Fleet dashboard" }] }),
   component: Routeline,
 });
 
-const trucks = [
-  { id: "KDA 221A", driver: "John Kiprono", fuelKm: 6.8, trips: 14, spend: 48200, status: "Active" },
-  { id: "KCB 980Z", driver: "Mary Atieno", fuelKm: 7.4, trips: 11, spend: 41100, status: "Active" },
-  { id: "KDH 552B", driver: "Peter Mutua", fuelKm: 5.9, trips: 9, spend: 36200, status: "Service" },
-  { id: "KDK 117C", driver: "Lilian Chebet", fuelKm: 8.1, trips: 17, spend: 52400, status: "Active" },
-];
-
 function Routeline() {
-  const totals = useMemo(() => ({
-    spend: trucks.reduce((a, t) => a + t.spend, 0),
+  const { data: trucks = [], isLoading } = useQuery({ queryKey: ["trucks"], queryFn: fetchTrucks });
+
+  const totals = {
+    spend: trucks.reduce((a, t) => a + Number(t.spend), 0),
     trips: trucks.reduce((a, t) => a + t.trips, 0),
-    avg: (trucks.reduce((a, t) => a + t.fuelKm, 0) / trucks.length).toFixed(1),
-  }), []);
+    avg: trucks.length ? (trucks.reduce((a, t) => a + Number(t.fuel_km), 0) / trucks.length).toFixed(1) : "—",
+  };
 
   return (
-    <AppShell title="Routeline" tag="Logistics" description="Fleet, fuel and driver performance at a glance. Built for ops teams who need to act on the numbers, not export them.">
+    <AppShell title="Routeline" tag="Logistics" description="Fleet, fuel and driver performance backed by Postgres — real rows, real totals." cover={cover}>
       <div className="grid gap-4 sm:grid-cols-3">
         <Stat label="Fleet spend (wk)" value={"KES " + totals.spend.toLocaleString()} />
         <Stat label="Completed trips" value={String(totals.trips)} />
-        <Stat label="Avg km / litre" value={totals.avg} />
+        <Stat label="Avg km / litre" value={String(totals.avg)} />
       </div>
 
       <Card className="mt-8">
         <h3 className="font-serif text-2xl">Active fleet</h3>
-        <div className="mt-5 overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead className="text-left text-xs uppercase tracking-wider text-muted-foreground">
-              <tr><th className="py-2">Plate</th><th>Driver</th><th>Km/L</th><th>Trips</th><th className="text-right">Spend</th><th className="text-right">Status</th></tr>
-            </thead>
-            <tbody>
-              {trucks.map((t) => (
-                <tr key={t.id} className="border-t border-border">
-                  <td className="py-3 font-medium">{t.id}</td>
-                  <td>{t.driver}</td>
-                  <td>{t.fuelKm}</td>
-                  <td>{t.trips}</td>
-                  <td className="text-right">KES {t.spend.toLocaleString()}</td>
-                  <td className="text-right">
-                    <span className={`chip ${t.status === "Active" ? "" : "!bg-amber-100 !text-amber-900"}`}>{t.status}</span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        {isLoading ? (
+          <p className="mt-5 text-sm text-muted-foreground">Loading fleet…</p>
+        ) : (
+          <div className="mt-5 overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead className="text-left text-xs uppercase tracking-wider text-muted-foreground">
+                <tr><th className="py-2">Plate</th><th>Driver</th><th>Km/L</th><th>Trips</th><th className="text-right">Spend</th><th className="text-right">Status</th></tr>
+              </thead>
+              <tbody>
+                {trucks.map((t) => (
+                  <tr key={t.id} className="border-t border-border">
+                    <td className="py-3 font-medium">{t.plate}</td>
+                    <td>{t.driver}</td>
+                    <td>{t.fuel_km}</td>
+                    <td>{t.trips}</td>
+                    <td className="text-right">KES {Number(t.spend).toLocaleString()}</td>
+                    <td className="text-right">
+                      <span className={`chip ${t.status === "Active" ? "" : "!bg-amber-100 !text-amber-900"}`}>{t.status}</span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
       </Card>
 
       <div className="mt-6 grid gap-4 md:grid-cols-2">
@@ -66,9 +67,10 @@ function Routeline() {
         <Card>
           <h3 className="font-serif text-xl">Alerts</h3>
           <ul className="mt-4 space-y-3 text-sm">
-            <li className="flex items-start gap-2"><span className="mt-1 h-2 w-2 rounded-full bg-rose-500" /> KDH 552B — service overdue by 320km</li>
-            <li className="flex items-start gap-2"><span className="mt-1 h-2 w-2 rounded-full bg-amber-500" /> KCB 980Z — fuel efficiency dropped 6%</li>
-            <li className="flex items-start gap-2"><span className="mt-1 h-2 w-2 rounded-full bg-emerald-500" /> KDA 221A — on schedule</li>
+            {trucks.filter(t => t.status !== "Active").map(t => (
+              <li key={t.id} className="flex items-start gap-2"><span className="mt-1 h-2 w-2 rounded-full bg-rose-500" /> {t.plate} — {t.status.toLowerCase()} required</li>
+            ))}
+            <li className="flex items-start gap-2"><span className="mt-1 h-2 w-2 rounded-full bg-emerald-500" /> All other trucks on schedule</li>
           </ul>
         </Card>
       </div>
