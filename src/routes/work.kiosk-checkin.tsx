@@ -38,7 +38,23 @@ function Kiosk() {
   };
 
   return (
-    <AppShell title="Kiosk Check-In" tag="Mobile" description="A single shared device at the entrance. Staff punch a PIN, the kiosk logs them in and pushes to HR.">
+    <AppShell title="Kiosk Check-In" tag="Mobile" description="A single shared device at the entrance. Staff punch a PIN, the kiosk logs them in and pushes to HR." caseStudy={{
+      category: "Mobile App",
+      scope: "Shared-device kiosk",
+      overview: "Kiosk Check-In runs on a shared tablet at the entrance. Staff punch a personal PIN to clock in or out and events stream straight into the HR backend — ideal for sites where individual phones aren't issued.",
+      businessValue: "Brings reliable attendance to sites where issuing personal devices isn't practical.",
+      outcome: "Sites without staff phones still capture clean attendance data flowing directly into payroll.",
+      tags: ["Flutter", "Kiosk", "Attendance", "HRMS"],
+      highlights: [
+        "PIN-based identification",
+        "Shared-device flow",
+        "Direct push to HR backend",
+        "Entrance-friendly UI",
+        "Multi-user support",
+      ],
+      visitUrl: "https://github.com/Gabuu94",
+    }}>
+
       <div className="grid gap-6 lg:grid-cols-2">
         <div className="rounded-3xl border border-border bg-card p-8">
           <div className="rounded-2xl bg-foreground p-6 text-center text-background">

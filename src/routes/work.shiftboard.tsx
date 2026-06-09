@@ -23,7 +23,22 @@ function Shiftboard() {
   const filtered = filter === "all" ? staff : staff.filter((s) => (filter === "in" ? s.clocked_in : !s.clocked_in));
 
   return (
-    <AppShell title="Shiftboard HRMS" tag="HR & Attendance" description="Live roster persisted to a database. Clock-in toggles update across every browser." cover={cover}>
+    <AppShell title="Shiftboard HRMS" tag="HR & Attendance" description="Live roster persisted to a database. Clock-in toggles update across every browser." cover={cover} caseStudy={{
+      category: "Web App",
+      scope: "HR & attendance platform",
+      overview: "Shiftboard is a Laravel-backed HR system used to coordinate attendance, payroll workflows and reporting for distributed teams across multiple branches. The web dashboard pairs with a Flutter field app so supervisors get live status, while HR handles approvals, leave and payroll runs from one console.",
+      businessValue: "Gives HR a single console for attendance, leave and payroll across multiple branches.",
+      outcome: "Branch managers see live clock-in status and HR closes payroll cycles in hours instead of a full day of spreadsheet wrangling.",
+      tags: ["Laravel", "API", "HRMS", "Flutter"],
+      highlights: [
+        "Live staff roster with clock-in toggles",
+        "Branch-level attendance reporting",
+        "Leave and approval workflows",
+        "Payroll-ready exports",
+        "Mobile field app integration",
+      ],
+      visitUrl: "https://github.com/Gabuu94",
+    }}>
       <div className="grid gap-4 sm:grid-cols-3">
         <Stat label="Headcount" value={String(staff.length)} />
         <Stat label="Clocked in" value={`${inCount} / ${staff.length}`} />

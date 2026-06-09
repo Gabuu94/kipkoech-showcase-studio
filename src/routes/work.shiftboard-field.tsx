@@ -17,7 +17,23 @@ function Field() {
   const punch = () => setPunches([...punches, { id: Date.now(), type: next, time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }), loc: "Westlands HQ · ±12m" }]);
 
   return (
-    <AppShell title="Shiftboard Field" tag="Mobile" description="Field-team companion for clocking in, logging location and syncing back to the HR backend.">
+    <AppShell title="Shiftboard Field" tag="Mobile" description="Field-team companion for clocking in, logging location and syncing back to the HR backend." caseStudy={{
+      category: "Mobile App",
+      scope: "Field attendance companion",
+      overview: "Shiftboard Field is the staff-facing mobile app paired with the Shiftboard HR backend. Field teams clock in with a geofence check, log location and sync events back to HR — so supervisors see who is on-site without phone calls.",
+      businessValue: "Replaces paper attendance and phone check-ins with verified, location-aware clock-in events.",
+      outcome: "Supervisors get accurate on-site presence in real time and HR closes payroll on clean attendance data.",
+      tags: ["Flutter", "Attendance", "Geolocation", "HRMS"],
+      highlights: [
+        "Geofenced clock-in",
+        "Location-stamped events",
+        "Offline-friendly capture",
+        "Sync to HR backend",
+        "Supervisor live view",
+      ],
+      visitUrl: "https://github.com/Gabuu94",
+    }}>
+
       <div className="mx-auto grid max-w-md gap-4">
         <div className="rounded-[2.2rem] border-4 border-foreground bg-background p-5 shadow-xl">
           <div className="mx-auto h-1.5 w-16 rounded-full bg-muted" />

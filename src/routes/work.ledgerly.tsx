@@ -36,7 +36,22 @@ function Ledgerly() {
   };
 
   return (
-    <AppShell title="Ledgerly" tag="Bookkeeping" description="Lightweight ledger backed by a live database. Every entry persists and is read by every visitor." cover={cover}>
+    <AppShell title="Ledgerly" tag="Bookkeeping" description="Lightweight ledger backed by a live database. Every entry persists and is read by every visitor." cover={cover} caseStudy={{
+      category: "Web App",
+      scope: "SaaS bookkeeping platform",
+      overview: "Ledgerly was built as a lightweight bookkeeping platform for small businesses that had outgrown spreadsheets but didn't need a heavy ERP. It handles invoicing, expense tracking, categorisation, reconciliation and tax-ready monthly reports — all backed by a live database so books stay consistent across the team.",
+      businessValue: "Replaces fragile spreadsheets with a single source of truth for income, expenses and tax-ready monthly reports.",
+      outcome: "Owners and accountants share one live ledger with categorised entries, reducing month-end reconciliation from days to minutes.",
+      tags: ["Laravel", "PostgreSQL", "React", "Reports"],
+      highlights: [
+        "Income and expense capture with categories",
+        "Live profit and loss totals",
+        "Tax-ready monthly summaries",
+        "Multi-user shared ledger",
+        "Database-backed persistence",
+      ],
+      visitUrl: "https://github.com/Gabuu94",
+    }}>
       <div className="grid gap-4 sm:grid-cols-3">
         <Stat label="Income" value={fmt(totals.income)} />
         <Stat label="Expenses" value={fmt(totals.expense)} />

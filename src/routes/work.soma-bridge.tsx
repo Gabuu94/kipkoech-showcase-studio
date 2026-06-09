@@ -34,7 +34,22 @@ function Soma() {
     : 0;
 
   return (
-    <AppShell title="Soma Bridge" tag="Learning" description="Structured courses with live database-backed progress and quick competence checks." cover={cover}>
+    <AppShell title="Soma Bridge" tag="Learning" description="Structured courses with live database-backed progress and quick competence checks." cover={cover} caseStudy={{
+      category: "Web App",
+      scope: "Learning platform",
+      overview: "Soma Bridge is a learning platform combining structured course content, assessments and reporting for skills training. Learners move through modules, take quick competence checks and have their progress persisted, while admins manage the catalogue and track results.",
+      businessValue: "Gives training teams a single platform to publish courses and track learner progress with real data.",
+      outcome: "Trainers track competence per learner in real time and replace ad-hoc PDFs with structured, assessable modules.",
+      tags: ["Laravel", "LMS", "Quizzes", "API"],
+      highlights: [
+        "Structured course modules",
+        "Inline competence quizzes",
+        "Persistent learner progress",
+        "Admin course management",
+        "Database-backed results",
+      ],
+      visitUrl: "https://github.com/Gabuu94",
+    }}>
       <div className="grid gap-4 sm:grid-cols-3">
         <Stat label="Active learners" value={String(totalLearners)} />
         <Stat label="Courses live" value={String(courses.length)} />

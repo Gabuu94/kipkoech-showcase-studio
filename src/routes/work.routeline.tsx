@@ -19,7 +19,22 @@ function Routeline() {
   };
 
   return (
-    <AppShell title="Routeline" tag="Logistics" description="Fleet, fuel and driver performance backed by Postgres — real rows, real totals." cover={cover}>
+    <AppShell title="Routeline" tag="Logistics" description="Fleet, fuel and driver performance backed by Postgres — real rows, real totals." cover={cover} caseStudy={{
+      category: "Web App",
+      scope: "Fleet operations dashboard",
+      overview: "Routeline is a logistics operations dashboard that tracks fleet expenses, fuel consumption and driver performance. It consolidates trip logs, fuel receipts and maintenance entries into one place so operations leads can compare trucks, spot anomalies and budget routes with real numbers.",
+      businessValue: "Turns scattered fuel and trip slips into structured operational data fleet managers can act on.",
+      outcome: "Fleet leads spot fuel anomalies per truck within the same day instead of catching them on month-end summaries.",
+      tags: ["Node", "PostgreSQL", "Dashboards", "Logistics"],
+      highlights: [
+        "Per-truck expense breakdown",
+        "Fuel consumption tracking",
+        "Driver performance metrics",
+        "Live totals and KPIs",
+        "Database-backed trip log",
+      ],
+      visitUrl: "https://github.com/Gabuu94",
+    }}>
       <div className="grid gap-4 sm:grid-cols-3">
         <Stat label="Fleet spend (wk)" value={"KES " + totals.spend.toLocaleString()} />
         <Stat label="Completed trips" value={String(totals.trips)} />

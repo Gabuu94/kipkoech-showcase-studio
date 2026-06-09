@@ -1,6 +1,17 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, BadgeCheck, ExternalLink } from "lucide-react";
 import type { ReactNode } from "react";
+
+export type CaseStudyData = {
+  category: string;
+  scope: string;
+  overview: string;
+  businessValue: string;
+  outcome: string;
+  tags: string[];
+  highlights: string[];
+  visitUrl?: string;
+};
 
 export function AppShell({
   title,
@@ -8,12 +19,14 @@ export function AppShell({
   description,
   children,
   cover,
+  caseStudy,
 }: {
   title: string;
   tag: string;
   description: string;
   children: ReactNode;
   cover?: string;
+  caseStudy?: CaseStudyData;
 }) {
   return (
     <div className="min-h-screen">
@@ -53,7 +66,82 @@ export function AppShell({
         </div>
       </section>
 
-      <section className="px-4 pb-24">
+      {caseStudy && (
+        <section id="case-study" className="px-4 pb-12">
+          <div className="mx-auto max-w-6xl rounded-3xl border border-border bg-card p-6 sm:p-10">
+            <p className="eyebrow">Case Study</p>
+            <h2 className="mt-2 font-serif text-3xl sm:text-4xl">{title}</h2>
+
+            <div className="mt-8 grid gap-6 lg:grid-cols-2">
+              <div className="space-y-6">
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="rounded-2xl border border-border bg-background p-5">
+                    <p className="eyebrow">Category</p>
+                    <p className="mt-2 text-lg font-medium">{caseStudy.category}</p>
+                  </div>
+                  <div className="rounded-2xl border border-border bg-background p-5">
+                    <p className="eyebrow">Scope</p>
+                    <p className="mt-2 text-lg font-medium">{caseStudy.scope}</p>
+                  </div>
+                </div>
+
+                <p className="text-muted-foreground leading-relaxed">{caseStudy.overview}</p>
+
+                <div className="rounded-2xl border border-border bg-background p-5">
+                  <p className="eyebrow">Business Value</p>
+                  <p className="mt-2 leading-relaxed">{caseStudy.businessValue}</p>
+                </div>
+
+                <div className="rounded-2xl border border-accent/40 bg-accent/10 p-5">
+                  <p className="eyebrow !text-accent">Outcome</p>
+                  <p className="mt-2 leading-relaxed">{caseStudy.outcome}</p>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {caseStudy.tags.map((t) => (
+                    <span key={t} className="rounded-full border border-border bg-background px-3 py-1 text-xs font-medium">{t}</span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-serif text-2xl">Highlights</h3>
+                  <ul className="mt-4 space-y-3">
+                    {caseStudy.highlights.map((h) => (
+                      <li key={h} className="flex items-start gap-3">
+                        <BadgeCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" />
+                        <span className="leading-relaxed">{h}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="flex flex-wrap gap-3 pt-2">
+                  {caseStudy.visitUrl && (
+                    <a
+                      href={caseStudy.visitUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-xs font-bold tracking-[0.18em] text-background hover:bg-accent transition-colors"
+                    >
+                      <ExternalLink className="h-4 w-4" /> VISIT PROJECT
+                    </a>
+                  )}
+                  <a
+                    href="#demo"
+                    className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-xs font-bold tracking-[0.18em] hover:border-foreground transition-colors"
+                  >
+                    OPEN LIVE DEMO
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      <section id="demo" className="px-4 pb-24">
         <div className="mx-auto max-w-6xl">{children}</div>
       </section>
     </div>
