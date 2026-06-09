@@ -13,6 +13,10 @@ import logoKcb from "@/assets/logos/kcb.png";
 import logoStripe from "@/assets/logos/stripe.png";
 import logoPaystack from "@/assets/logos/paystack.png";
 import logoEtims from "@/assets/logos/etims.png";
+import logoMongoDB from "@/assets/logos/mongodb.png";
+import logoExpress from "@/assets/logos/express.png";
+import logoReact from "@/assets/logos/react.png";
+import logoNodeJS from "@/assets/logos/nodejs.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
