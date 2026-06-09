@@ -1,6 +1,17 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, BadgeCheck, ExternalLink } from "lucide-react";
 import type { ReactNode } from "react";
+
+export type CaseStudyData = {
+  category: string;
+  scope: string;
+  overview: string;
+  businessValue: string;
+  outcome: string;
+  tags: string[];
+  highlights: string[];
+  visitUrl?: string;
+};
 
 export function AppShell({
   title,
