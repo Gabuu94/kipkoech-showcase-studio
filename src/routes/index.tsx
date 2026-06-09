@@ -62,6 +62,9 @@ const mobile = [
   { tag: "Mobile", name: "Shiftboard Field", slug: "/work/shiftboard-field", body: "Mobile attendance and field-coordination app connected to the Shiftboard HR backend." },
   { tag: "Mobile", name: "Routeline Driver", slug: "/work/routeline-driver", body: "Driver-side companion for expense logging, trip notes and offline-friendly capture." },
   { tag: "Mobile", name: "Kiosk Check-In", slug: "/work/kiosk-checkin", body: "Shared-device attendance kiosk for multiple users checking in at one station." },
+  { tag: "Mobile", name: "FarmTrack", slug: "/work/farmtrack", body: "A Flutter app for smallholder farmers to log crop activity, inputs and yields with full offline support." },
+  { tag: "Mobile", name: "MediRemind", slug: "/work/mediremind", body: "Medication reminder and adherence tracker with caretaker sync and missed-dose alerts." },
+  { tag: "Mobile", name: "FieldAudit", slug: "/work/fieldaudit", body: "On-site inspection and audit checklist app with photo evidence, signatures and offline sync." },
 ] as const;
 
 const capabilities = [
