@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Rocket, Mail, ArrowUpRight, Github, Linkedin, Twitter } from "lucide-react";
 import heroImg from "@/assets/hero.png";
 
@@ -43,20 +43,20 @@ const services = [
 ];
 
 const projects = [
-  { tag: "Web App", name: "Ledgerly", body: "A bookkeeping platform for small businesses with invoicing, reconciliation and tax-ready reports." },
-  { tag: "Web App", name: "Shiftboard HRMS", body: "Attendance, payroll workflows and reporting for distributed teams across multiple branches." },
-  { tag: "Web App", name: "Routeline", body: "Logistics dashboard for fleet expense tracking, fuel monitoring and driver performance." },
-  { tag: "Web App", name: "Kazana Retail", body: "A SaaS POS backend handling stock, multi-outlet inventory and structured selling workflows." },
-  { tag: "Web App", name: "ClinicQueue", body: "Patient booking platform with discovery, scheduling and clinician availability management." },
-  { tag: "Web App", name: "Soma Bridge", body: "A learning platform combining structured content, assessments and integrations for skills training." },
-];
+  { tag: "Web App", name: "Ledgerly", slug: "/work/ledgerly", body: "A bookkeeping platform for small businesses with invoicing, reconciliation and tax-ready reports." },
+  { tag: "Web App", name: "Shiftboard HRMS", slug: "/work/shiftboard", body: "Attendance, payroll workflows and reporting for distributed teams across multiple branches." },
+  { tag: "Web App", name: "Routeline", slug: "/work/routeline", body: "Logistics dashboard for fleet expense tracking, fuel monitoring and driver performance." },
+  { tag: "Web App", name: "Kazana Retail", slug: "/work/kazana-retail", body: "A SaaS POS backend handling stock, multi-outlet inventory and structured selling workflows." },
+  { tag: "Web App", name: "ClinicQueue", slug: "/work/clinicqueue", body: "Patient booking platform with discovery, scheduling and clinician availability management." },
+  { tag: "Web App", name: "Soma Bridge", slug: "/work/soma-bridge", body: "A learning platform combining structured content, assessments and integrations for skills training." },
+] as const;
 
 const mobile = [
-  { tag: "Mobile", name: "Kazana POS", body: "A Flutter POS app for structured selling, checkout flows and stock visibility on the floor." },
-  { tag: "Mobile", name: "Shiftboard Field", body: "Mobile attendance and field-coordination app connected to the Shiftboard HR backend." },
-  { tag: "Mobile", name: "Routeline Driver", body: "Driver-side companion for expense logging, trip notes and offline-friendly capture." },
-  { tag: "Mobile", name: "Kiosk Check-In", body: "Shared-device attendance kiosk for multiple users checking in at one station." },
-];
+  { tag: "Mobile", name: "Kazana POS", slug: "/work/kazana-pos", body: "A Flutter POS app for structured selling, checkout flows and stock visibility on the floor." },
+  { tag: "Mobile", name: "Shiftboard Field", slug: "/work/shiftboard-field", body: "Mobile attendance and field-coordination app connected to the Shiftboard HR backend." },
+  { tag: "Mobile", name: "Routeline Driver", slug: "/work/routeline-driver", body: "Driver-side companion for expense logging, trip notes and offline-friendly capture." },
+  { tag: "Mobile", name: "Kiosk Check-In", slug: "/work/kiosk-checkin", body: "Shared-device attendance kiosk for multiple users checking in at one station." },
+] as const;
 
 const capabilities = [
   { title: "Backend", body: "Application logic, APIs, reporting, data modeling and operational workflows.", tags: ["PHP", "Laravel", "Node", "PostgreSQL", "REST APIs", "Reports"] },
@@ -194,7 +194,7 @@ function Index() {
           <h2 className="mt-4 text-4xl sm:text-5xl">Web and platform apps</h2>
           <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((p) => (
-              <article key={p.name} className="group rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-lg">
+              <Link to={p.slug} key={p.name} className="group block rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-lg">
                 <div className="aspect-[4/3] rounded-xl bg-gradient-to-br from-secondary to-muted relative overflow-hidden">
                   <div className="absolute inset-0 grid place-items-center font-serif text-4xl text-muted-foreground/40">{p.name.charAt(0)}</div>
                 </div>
@@ -202,9 +202,9 @@ function Index() {
                 <h3 className="mt-2 font-serif text-2xl">{p.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
                 <div className="mt-4 flex items-center gap-2 text-xs font-semibold tracking-[0.18em] text-accent">
-                  CASE STUDY <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  OPEN DEMO <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
 
@@ -212,14 +212,14 @@ function Index() {
           <h2 className="mt-4 text-4xl sm:text-5xl">Flutter apps</h2>
           <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {mobile.map((p) => (
-              <article key={p.name} className="group rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-lg">
+              <Link to={p.slug} key={p.name} className="group block rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-lg">
                 <div className="aspect-[3/4] rounded-xl bg-gradient-to-br from-secondary to-muted relative overflow-hidden">
                   <div className="absolute inset-0 grid place-items-center font-serif text-4xl text-muted-foreground/40">{p.name.charAt(0)}</div>
                 </div>
                 <p className="eyebrow mt-5 !text-muted-foreground">{p.tag}</p>
                 <h3 className="mt-2 font-serif text-xl">{p.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
-              </article>
+              </Link>
             ))}
           </div>
         </div>
