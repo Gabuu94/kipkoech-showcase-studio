@@ -14,7 +14,192 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      clinic_appointments: {
+        Row: {
+          clinician: string
+          created_at: string
+          id: string
+          patient: string
+          slot: string
+        }
+        Insert: {
+          clinician: string
+          created_at?: string
+          id?: string
+          patient: string
+          slot: string
+        }
+        Update: {
+          clinician?: string
+          created_at?: string
+          id?: string
+          patient?: string
+          slot?: string
+        }
+        Relationships: []
+      }
+      clinic_clinicians: {
+        Row: {
+          full_name: string
+          id: string
+          slots: string[]
+          specialty: string
+        }
+        Insert: {
+          full_name: string
+          id?: string
+          slots: string[]
+          specialty: string
+        }
+        Update: {
+          full_name?: string
+          id?: string
+          slots?: string[]
+          specialty?: string
+        }
+        Relationships: []
+      }
+      kazana_items: {
+        Row: {
+          id: string
+          name: string
+          outlet: string
+          price: number
+          reorder: number
+          sku: string
+          stock: number
+        }
+        Insert: {
+          id?: string
+          name: string
+          outlet: string
+          price: number
+          reorder: number
+          sku: string
+          stock: number
+        }
+        Update: {
+          id?: string
+          name?: string
+          outlet?: string
+          price?: number
+          reorder?: number
+          sku?: string
+          stock?: number
+        }
+        Relationships: []
+      }
+      ledger_transactions: {
+        Row: {
+          amount: number
+          category: string
+          created_at: string
+          description: string
+          id: string
+          kind: string
+          occurred_on: string
+        }
+        Insert: {
+          amount: number
+          category: string
+          created_at?: string
+          description: string
+          id?: string
+          kind: string
+          occurred_on?: string
+        }
+        Update: {
+          amount?: number
+          category?: string
+          created_at?: string
+          description?: string
+          id?: string
+          kind?: string
+          occurred_on?: string
+        }
+        Relationships: []
+      }
+      routeline_trucks: {
+        Row: {
+          driver: string
+          fuel_km: number
+          id: string
+          plate: string
+          spend: number
+          status: string
+          trips: number
+        }
+        Insert: {
+          driver: string
+          fuel_km: number
+          id?: string
+          plate: string
+          spend: number
+          status: string
+          trips: number
+        }
+        Update: {
+          driver?: string
+          fuel_km?: number
+          id?: string
+          plate?: string
+          spend?: number
+          status?: string
+          trips?: number
+        }
+        Relationships: []
+      }
+      shiftboard_staff: {
+        Row: {
+          branch: string
+          clocked_in: boolean
+          full_name: string
+          id: string
+          last_in: string | null
+          role: string
+        }
+        Insert: {
+          branch: string
+          clocked_in?: boolean
+          full_name: string
+          id?: string
+          last_in?: string | null
+          role: string
+        }
+        Update: {
+          branch?: string
+          clocked_in?: boolean
+          full_name?: string
+          id?: string
+          last_in?: string | null
+          role?: string
+        }
+        Relationships: []
+      }
+      soma_courses: {
+        Row: {
+          done: number
+          id: string
+          learners: number
+          modules: number
+          title: string
+        }
+        Insert: {
+          done?: number
+          id?: string
+          learners?: number
+          modules: number
+          title: string
+        }
+        Update: {
+          done?: number
+          id?: string
+          learners?: number
+          modules?: number
+          title?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
