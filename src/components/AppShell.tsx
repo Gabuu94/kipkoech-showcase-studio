@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowUpRight, BadgeCheck, Quote, Sparkles } from "lucide-react";
 import type { ReactNode } from "react";
+import { Gallery, type GalleryItem } from "@/components/Gallery";
 
 export type CaseStudyData = {
   category: string;
