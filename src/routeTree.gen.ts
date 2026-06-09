@@ -10,33 +10,167 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as WorkSomaBridgeRouteImport } from './routes/work.soma-bridge'
+import { Route as WorkShiftboardFieldRouteImport } from './routes/work.shiftboard-field'
+import { Route as WorkShiftboardRouteImport } from './routes/work.shiftboard'
+import { Route as WorkRoutelineDriverRouteImport } from './routes/work.routeline-driver'
+import { Route as WorkRoutelineRouteImport } from './routes/work.routeline'
+import { Route as WorkLedgerlyRouteImport } from './routes/work.ledgerly'
+import { Route as WorkKioskCheckinRouteImport } from './routes/work.kiosk-checkin'
+import { Route as WorkKazanaRetailRouteImport } from './routes/work.kazana-retail'
+import { Route as WorkKazanaPosRouteImport } from './routes/work.kazana-pos'
+import { Route as WorkClinicqueueRouteImport } from './routes/work.clinicqueue'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WorkSomaBridgeRoute = WorkSomaBridgeRouteImport.update({
+  id: '/work/soma-bridge',
+  path: '/work/soma-bridge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkShiftboardFieldRoute = WorkShiftboardFieldRouteImport.update({
+  id: '/work/shiftboard-field',
+  path: '/work/shiftboard-field',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkShiftboardRoute = WorkShiftboardRouteImport.update({
+  id: '/work/shiftboard',
+  path: '/work/shiftboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkRoutelineDriverRoute = WorkRoutelineDriverRouteImport.update({
+  id: '/work/routeline-driver',
+  path: '/work/routeline-driver',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkRoutelineRoute = WorkRoutelineRouteImport.update({
+  id: '/work/routeline',
+  path: '/work/routeline',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkLedgerlyRoute = WorkLedgerlyRouteImport.update({
+  id: '/work/ledgerly',
+  path: '/work/ledgerly',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkKioskCheckinRoute = WorkKioskCheckinRouteImport.update({
+  id: '/work/kiosk-checkin',
+  path: '/work/kiosk-checkin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkKazanaRetailRoute = WorkKazanaRetailRouteImport.update({
+  id: '/work/kazana-retail',
+  path: '/work/kazana-retail',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkKazanaPosRoute = WorkKazanaPosRouteImport.update({
+  id: '/work/kazana-pos',
+  path: '/work/kazana-pos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkClinicqueueRoute = WorkClinicqueueRouteImport.update({
+  id: '/work/clinicqueue',
+  path: '/work/clinicqueue',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/work/clinicqueue': typeof WorkClinicqueueRoute
+  '/work/kazana-pos': typeof WorkKazanaPosRoute
+  '/work/kazana-retail': typeof WorkKazanaRetailRoute
+  '/work/kiosk-checkin': typeof WorkKioskCheckinRoute
+  '/work/ledgerly': typeof WorkLedgerlyRoute
+  '/work/routeline': typeof WorkRoutelineRoute
+  '/work/routeline-driver': typeof WorkRoutelineDriverRoute
+  '/work/shiftboard': typeof WorkShiftboardRoute
+  '/work/shiftboard-field': typeof WorkShiftboardFieldRoute
+  '/work/soma-bridge': typeof WorkSomaBridgeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/work/clinicqueue': typeof WorkClinicqueueRoute
+  '/work/kazana-pos': typeof WorkKazanaPosRoute
+  '/work/kazana-retail': typeof WorkKazanaRetailRoute
+  '/work/kiosk-checkin': typeof WorkKioskCheckinRoute
+  '/work/ledgerly': typeof WorkLedgerlyRoute
+  '/work/routeline': typeof WorkRoutelineRoute
+  '/work/routeline-driver': typeof WorkRoutelineDriverRoute
+  '/work/shiftboard': typeof WorkShiftboardRoute
+  '/work/shiftboard-field': typeof WorkShiftboardFieldRoute
+  '/work/soma-bridge': typeof WorkSomaBridgeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/work/clinicqueue': typeof WorkClinicqueueRoute
+  '/work/kazana-pos': typeof WorkKazanaPosRoute
+  '/work/kazana-retail': typeof WorkKazanaRetailRoute
+  '/work/kiosk-checkin': typeof WorkKioskCheckinRoute
+  '/work/ledgerly': typeof WorkLedgerlyRoute
+  '/work/routeline': typeof WorkRoutelineRoute
+  '/work/routeline-driver': typeof WorkRoutelineDriverRoute
+  '/work/shiftboard': typeof WorkShiftboardRoute
+  '/work/shiftboard-field': typeof WorkShiftboardFieldRoute
+  '/work/soma-bridge': typeof WorkSomaBridgeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/work/clinicqueue'
+    | '/work/kazana-pos'
+    | '/work/kazana-retail'
+    | '/work/kiosk-checkin'
+    | '/work/ledgerly'
+    | '/work/routeline'
+    | '/work/routeline-driver'
+    | '/work/shiftboard'
+    | '/work/shiftboard-field'
+    | '/work/soma-bridge'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/work/clinicqueue'
+    | '/work/kazana-pos'
+    | '/work/kazana-retail'
+    | '/work/kiosk-checkin'
+    | '/work/ledgerly'
+    | '/work/routeline'
+    | '/work/routeline-driver'
+    | '/work/shiftboard'
+    | '/work/shiftboard-field'
+    | '/work/soma-bridge'
+  id:
+    | '__root__'
+    | '/'
+    | '/work/clinicqueue'
+    | '/work/kazana-pos'
+    | '/work/kazana-retail'
+    | '/work/kiosk-checkin'
+    | '/work/ledgerly'
+    | '/work/routeline'
+    | '/work/routeline-driver'
+    | '/work/shiftboard'
+    | '/work/shiftboard-field'
+    | '/work/soma-bridge'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  WorkClinicqueueRoute: typeof WorkClinicqueueRoute
+  WorkKazanaPosRoute: typeof WorkKazanaPosRoute
+  WorkKazanaRetailRoute: typeof WorkKazanaRetailRoute
+  WorkKioskCheckinRoute: typeof WorkKioskCheckinRoute
+  WorkLedgerlyRoute: typeof WorkLedgerlyRoute
+  WorkRoutelineRoute: typeof WorkRoutelineRoute
+  WorkRoutelineDriverRoute: typeof WorkRoutelineDriverRoute
+  WorkShiftboardRoute: typeof WorkShiftboardRoute
+  WorkShiftboardFieldRoute: typeof WorkShiftboardFieldRoute
+  WorkSomaBridgeRoute: typeof WorkSomaBridgeRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +182,92 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/work/soma-bridge': {
+      id: '/work/soma-bridge'
+      path: '/work/soma-bridge'
+      fullPath: '/work/soma-bridge'
+      preLoaderRoute: typeof WorkSomaBridgeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/shiftboard-field': {
+      id: '/work/shiftboard-field'
+      path: '/work/shiftboard-field'
+      fullPath: '/work/shiftboard-field'
+      preLoaderRoute: typeof WorkShiftboardFieldRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/shiftboard': {
+      id: '/work/shiftboard'
+      path: '/work/shiftboard'
+      fullPath: '/work/shiftboard'
+      preLoaderRoute: typeof WorkShiftboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/routeline-driver': {
+      id: '/work/routeline-driver'
+      path: '/work/routeline-driver'
+      fullPath: '/work/routeline-driver'
+      preLoaderRoute: typeof WorkRoutelineDriverRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/routeline': {
+      id: '/work/routeline'
+      path: '/work/routeline'
+      fullPath: '/work/routeline'
+      preLoaderRoute: typeof WorkRoutelineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/ledgerly': {
+      id: '/work/ledgerly'
+      path: '/work/ledgerly'
+      fullPath: '/work/ledgerly'
+      preLoaderRoute: typeof WorkLedgerlyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/kiosk-checkin': {
+      id: '/work/kiosk-checkin'
+      path: '/work/kiosk-checkin'
+      fullPath: '/work/kiosk-checkin'
+      preLoaderRoute: typeof WorkKioskCheckinRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/kazana-retail': {
+      id: '/work/kazana-retail'
+      path: '/work/kazana-retail'
+      fullPath: '/work/kazana-retail'
+      preLoaderRoute: typeof WorkKazanaRetailRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/kazana-pos': {
+      id: '/work/kazana-pos'
+      path: '/work/kazana-pos'
+      fullPath: '/work/kazana-pos'
+      preLoaderRoute: typeof WorkKazanaPosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/clinicqueue': {
+      id: '/work/clinicqueue'
+      path: '/work/clinicqueue'
+      fullPath: '/work/clinicqueue'
+      preLoaderRoute: typeof WorkClinicqueueRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  WorkClinicqueueRoute: WorkClinicqueueRoute,
+  WorkKazanaPosRoute: WorkKazanaPosRoute,
+  WorkKazanaRetailRoute: WorkKazanaRetailRoute,
+  WorkKioskCheckinRoute: WorkKioskCheckinRoute,
+  WorkLedgerlyRoute: WorkLedgerlyRoute,
+  WorkRoutelineRoute: WorkRoutelineRoute,
+  WorkRoutelineDriverRoute: WorkRoutelineDriverRoute,
+  WorkShiftboardRoute: WorkShiftboardRoute,
+  WorkShiftboardFieldRoute: WorkShiftboardFieldRoute,
+  WorkSomaBridgeRoute: WorkSomaBridgeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
