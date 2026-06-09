@@ -30,6 +30,7 @@ export function AppShell({
   children,
   cover,
   caseStudy,
+  gallery,
 }: {
   title: string;
   tag: string;
@@ -37,6 +38,7 @@ export function AppShell({
   children: ReactNode;
   cover?: string;
   caseStudy?: CaseStudyData;
+  gallery?: GalleryItem[];
 }) {
   return (
     <div className="min-h-screen">
