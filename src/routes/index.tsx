@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Rocket, Mail, ArrowUpRight, Github, Linkedin, Twitter } from "lucide-react";
+import { Rocket, Mail, ArrowUpRight, Github, Linkedin, Twitter, Phone, MessageCircle } from "lucide-react";
 import heroImg from "@/assets/hero.png";
 import coverLedgerly from "@/assets/cover-ledgerly.jpg";
 import coverShiftboard from "@/assets/cover-shiftboard.jpg";
