@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Rocket, Mail, ArrowUpRight, Github, Linkedin, Twitter, Phone, MessageCircle, ShoppingCart, Users, Truck, ScanLine, Sprout, Pill, ClipboardCheck, type LucideIcon } from "lucide-react";
+import { Rocket, Mail, ArrowUpRight, Github, Linkedin, Twitter, Phone, MessageCircle } from "lucide-react";
 import heroImg from "@/assets/hero.png";
 import coverLedgerly from "@/assets/cover-ledgerly.jpg";
 import coverShiftboard from "@/assets/cover-shiftboard.jpg";
@@ -62,15 +62,6 @@ const projects = [
   { tag: "Learning Platform", name: "Soma Bridge", slug: "/work/soma-bridge", cover: coverSoma, body: "Structured content, assessments and integrations for skills training across distributed learner cohorts.", tags: ["Laravel", "LMS", "Assessments", "API"] },
 ] as const;
 
-const mobile: { tag: string; name: string; slug: string; body: string; tags: string[]; Icon: LucideIcon; gradient: string }[] = [
-  { tag: "Flutter · POS", name: "Kazana POS", slug: "/work/kazana-pos", body: "On-the-floor selling, checkout flows and stock visibility wired to the Kazana retail backend.", tags: ["Flutter", "Offline", "Printer", "Stock"], Icon: ShoppingCart, gradient: "from-amber-500/80 to-rose-500/80" },
-  { tag: "Flutter · HR", name: "Shiftboard Field", slug: "/work/shiftboard-field", body: "Mobile attendance and field coordination connected to the Shiftboard HR backend in real time.", tags: ["Flutter", "Geo", "Attendance", "Sync"], Icon: Users, gradient: "from-sky-500/80 to-indigo-500/80" },
-  { tag: "Flutter · Fleet", name: "Routeline Driver", slug: "/work/routeline-driver", body: "Driver companion for expense logging, trip notes and offline-friendly capture during long routes.", tags: ["Flutter", "Offline", "Fuel", "Trips"], Icon: Truck, gradient: "from-emerald-500/80 to-teal-600/80" },
-  { tag: "Flutter · Kiosk", name: "Kiosk Check-In", slug: "/work/kiosk-checkin", body: "Shared-device attendance kiosk letting multiple users check in fast at one fixed station.", tags: ["Flutter", "Kiosk", "PIN", "Sync"], Icon: ScanLine, gradient: "from-violet-500/80 to-fuchsia-500/80" },
-  { tag: "Flutter · AgriTech", name: "FarmTrack", slug: "/work/farmtrack", body: "Smallholder farmer logging for crop activity, inputs and yields — fully offline-first on low-end devices.", tags: ["Flutter", "Offline", "Agri", "Reports"], Icon: Sprout, gradient: "from-lime-500/80 to-emerald-600/80" },
-  { tag: "Flutter · Health", name: "MediRemind", slug: "/work/mediremind", body: "Medication reminders and adherence tracking with caretaker sync and missed-dose alerts.", tags: ["Flutter", "Reminders", "Adherence", "Sync"], Icon: Pill, gradient: "from-pink-500/80 to-rose-600/80" },
-  { tag: "Flutter · Compliance", name: "FieldAudit", slug: "/work/fieldaudit", body: "On-site inspection checklists with photo evidence, signatures and offline-first sync.", tags: ["Flutter", "Audits", "Photos", "Offline"], Icon: ClipboardCheck, gradient: "from-orange-500/80 to-amber-600/80" },
-];
 
 const capabilities = [
   { title: "Backend", body: "Application logic, APIs, reporting, data modeling and operational workflows.", tags: ["PHP", "Laravel", "Node", "PostgreSQL", "REST APIs", "Reports"] },
@@ -244,45 +235,6 @@ function Index() {
             ))}
           </div>
 
-          <p className="eyebrow mt-24">Mobile Apps</p>
-          <h2 className="mt-4 text-4xl sm:text-5xl">Flutter apps</h2>
-          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {mobile.map((p) => (
-              <div key={p.name} className="group flex flex-col rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-lg">
-                <Link to={p.slug} className="block">
-                  <div className={`aspect-[3/4] rounded-xl bg-gradient-to-br ${p.gradient} relative overflow-hidden`}>
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.25),transparent_60%)]" />
-                    <div className="absolute inset-x-4 top-4 flex items-center justify-between text-background/90">
-                      <span className="rounded-full bg-background/20 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.2em] backdrop-blur">{p.tag.split(" · ")[1] ?? p.tag}</span>
-                      <span className="h-2 w-2 rounded-full bg-background/80" />
-                    </div>
-                    <div className="absolute inset-0 grid place-items-center">
-                      <p.Icon className="h-16 w-16 text-background drop-shadow-lg" strokeWidth={1.5} />
-                    </div>
-                    <div className="absolute inset-x-4 bottom-4 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-background/90">
-                      <span className="h-1.5 w-1.5 rounded-full bg-background" /> Flutter
-                    </div>
-                  </div>
-                </Link>
-                <p className="eyebrow mt-5 !text-muted-foreground">{p.tag}</p>
-                <Link to={p.slug} className="mt-2 font-serif text-xl hover:text-accent transition-colors">{p.name}</Link>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
-                <div className="mt-4 flex flex-wrap gap-1.5">
-                  {p.tags.map((t) => (
-                    <span key={t} className="rounded-full border border-border bg-background px-2.5 py-1 text-[10px] font-semibold tracking-wide text-muted-foreground">{t}</span>
-                  ))}
-                </div>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  <Link to={p.slug} hash="case-study" className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-[11px] font-bold tracking-[0.18em] text-background hover:bg-accent transition-colors">
-                    CASE STUDY
-                  </Link>
-                  <Link to={p.slug} className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-[11px] font-bold tracking-[0.18em] hover:border-foreground transition-colors">
-                    OPEN DEMO <ArrowUpRight className="h-3.5 w-3.5" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
