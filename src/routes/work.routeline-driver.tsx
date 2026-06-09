@@ -27,7 +27,23 @@ function Driver() {
   };
 
   return (
-    <AppShell title="Routeline Driver" tag="Mobile" description="The driver-side companion. Log trip expenses fast and let the back office reconcile later.">
+    <AppShell title="Routeline Driver" tag="Mobile" description="The driver-side companion. Log trip expenses fast and let the back office reconcile later." caseStudy={{
+      category: "Mobile App",
+      scope: "Driver companion app",
+      overview: "Routeline Driver is the driver-side companion to the Routeline fleet dashboard. Drivers log fuel, tolls and trip notes on the go and the back office reconciles entries later — no more pile of receipts to digitise at month-end.",
+      businessValue: "Captures fuel and trip spend at source so reconciliation isn't a month-end scramble.",
+      outcome: "Drivers log every fuel stop in seconds and finance reconciles weekly instead of dreading month-end.",
+      tags: ["Flutter", "Logistics", "Mobile", "Offline"],
+      highlights: [
+        "Quick expense capture",
+        "Per-trip notes",
+        "Offline-friendly sync",
+        "Pushes to fleet backend",
+        "Driver-first UI",
+      ],
+      visitUrl: "https://github.com/Gabuu94",
+    }}>
+
       <div className="mx-auto grid max-w-md gap-4">
         <div className="rounded-[2.2rem] border-4 border-foreground bg-background p-5 shadow-xl">
           <div className="mx-auto h-1.5 w-16 rounded-full bg-muted" />

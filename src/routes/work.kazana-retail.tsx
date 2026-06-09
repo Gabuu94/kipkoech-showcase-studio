@@ -21,7 +21,22 @@ function Kazana() {
   const value = items.reduce((a, i) => a + i.stock * Number(i.price), 0);
 
   return (
-    <AppShell title="Kazana Retail" tag="POS / Inventory" description="Multi-outlet stock control with live database persistence and reorder signals." cover={cover}>
+    <AppShell title="Kazana Retail" tag="POS / Inventory" description="Multi-outlet stock control with live database persistence and reorder signals." cover={cover} caseStudy={{
+      category: "Web App",
+      scope: "POS backend & inventory",
+      overview: "Kazana Retail is the SaaS backend behind a multi-outlet POS. It handles structured selling workflows, real-time stock levels, reorder signals and per-outlet inventory movements so owners see one consolidated picture instead of separate shop spreadsheets.",
+      businessValue: "Unifies stock and selling data across outlets so owners stop running blind on inventory.",
+      outcome: "Outlet managers receive reorder alerts before stockouts and head-office tracks all branches from one screen.",
+      tags: ["Laravel", "POS", "Inventory", "API"],
+      highlights: [
+        "Multi-outlet stock control",
+        "Live reorder signals",
+        "Structured selling workflows",
+        "Per-outlet inventory movements",
+        "Owner-level reporting",
+      ],
+      visitUrl: "https://github.com/Gabuu94",
+    }}>
       <div className="grid gap-4 sm:grid-cols-3">
         <Stat label="SKUs tracked" value={String(items.length)} />
         <Stat label="Below reorder" value={String(lowStock)} />

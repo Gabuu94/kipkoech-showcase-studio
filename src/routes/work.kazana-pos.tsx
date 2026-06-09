@@ -31,7 +31,23 @@ function Pos() {
   };
 
   return (
-    <AppShell title="Kazana POS" tag="Mobile" description="Flutter-style checkout on the floor. Tap to add, swipe to total, M-Pesa or cash on the way out.">
+    <AppShell title="Kazana POS" tag="Mobile" description="Flutter-style checkout on the floor. Tap to add, swipe to total, M-Pesa or cash on the way out." caseStudy={{
+      category: "Mobile App",
+      scope: "Flutter POS",
+      overview: "Kazana POS is the Flutter companion to the Kazana retail backend. Cashiers tap items into a cart, see live totals and check out with M-Pesa or cash on the floor — without juggling paper receipts or a separate calculator.",
+      businessValue: "Speeds up checkout on the floor and keeps every sale tied back to the central inventory.",
+      outcome: "Cashiers shorten queues at peak and every sale flows straight into stock and reporting without re-entry.",
+      tags: ["Flutter", "POS", "M-Pesa", "Mobile"],
+      highlights: [
+        "Tap-to-add cart flow",
+        "Live total and tax handling",
+        "M-Pesa and cash checkout",
+        "Backend stock sync",
+        "Floor-friendly UI",
+      ],
+      visitUrl: "https://github.com/Gabuu94",
+    }}>
+
       <div className="mx-auto grid max-w-md gap-4">
         <div className="rounded-[2.2rem] border-4 border-foreground bg-background p-4 shadow-xl">
           <div className="mx-auto h-1.5 w-16 rounded-full bg-muted" />

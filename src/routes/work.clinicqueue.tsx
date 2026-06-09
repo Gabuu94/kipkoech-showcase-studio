@@ -40,7 +40,22 @@ function ClinicQueue() {
   };
 
   return (
-    <AppShell title="ClinicQueue" tag="Bookings" description="Patient bookings stored in a live database. Confirmations persist across every visitor's screen." cover={cover}>
+    <AppShell title="ClinicQueue" tag="Bookings" description="Patient bookings stored in a live database. Confirmations persist across every visitor's screen." cover={cover} caseStudy={{
+      category: "Web App",
+      scope: "Booking & scheduling platform",
+      overview: "ClinicQueue lets patients discover clinicians, pick a slot and confirm an appointment without phone tag. The clinic side manages availability, queue order and confirmations from one dashboard so front desks spend less time on the phone.",
+      businessValue: "Cuts front-desk phone load by moving bookings online with persistent confirmations.",
+      outcome: "Clinics handle the same patient volume with less front-desk time and far fewer missed-call no-shows.",
+      tags: ["Laravel", "Bookings", "API", "React"],
+      highlights: [
+        "Patient self-booking flow",
+        "Clinician availability management",
+        "Persistent confirmations",
+        "Queue order and statuses",
+        "Multi-clinician scheduling",
+      ],
+      visitUrl: "https://github.com/Gabuu94",
+    }}>
       <div className="grid gap-6 lg:grid-cols-[1fr_2fr]">
         <Card>
           <h3 className="font-serif text-2xl">Book appointment</h3>
