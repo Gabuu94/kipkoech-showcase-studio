@@ -23,7 +23,7 @@ const navLinks = [
 ];
 
 const stats = [
-  { value: "6+ years", label: "Delivery depth", body: "Hands-on shipping across internal tools, business platforms, and long-lived operational systems." },
+  { value: "3 years", label: "Delivery depth", body: "Hands-on shipping across internal tools, business platforms, and long-lived operational systems." },
   { value: "20+", label: "Live builds", body: "Projects spanning HR, retail, logistics, education, attendance and SaaS workflows." },
   { value: "Laravel / Node", label: "Backend strength", body: "Comfortable with business rules, APIs, reporting, permissions and system structure." },
   { value: "Flutter / Web", label: "Cross-surface execution", body: "Connecting backend systems to mobile and web interfaces that teams can actually use." },
@@ -85,7 +85,7 @@ function Index() {
               <li key={l.href}><a href={l.href} className="hover:text-accent transition-colors">{l.label.toUpperCase()}</a></li>
             ))}
           </ul>
-          <a href="#contact" className="rounded-full bg-foreground px-4 py-2.5 text-[11px] font-bold tracking-[0.18em] text-background hover:bg-accent transition-colors">
+          <a href="tel:254797585941" className="rounded-full bg-foreground px-4 py-2.5 text-[11px] font-bold tracking-[0.18em] text-background hover:bg-accent transition-colors">
             BOOK A CALL
           </a>
         </nav>
@@ -100,7 +100,7 @@ function Index() {
               I build software that helps teams ship with less friction.
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
-              Full-stack engineer with 6+ years building Laravel and Node platforms,
+              Full-stack engineer with 3 years building Laravel and Node platforms,
               Flutter apps, dashboards and integrations across HR, retail, logistics
               and SaaS products.
             </p>
@@ -296,9 +296,9 @@ function Index() {
             <p className="eyebrow">Find me</p>
             <div className="mt-5 flex justify-center gap-3">
               {[
-                { Icon: Github, href: "#" },
+                { Icon: Github, href: "https://github.com/Gabuu94" },
                 { Icon: Linkedin, href: "#" },
-                { Icon: Twitter, href: "#" },
+                { Icon: Twitter, href: "https://twitter.com/Eng_gabu" },
               ].map(({ Icon, href }, i) => (
                 <a key={i} href={href} className="grid h-11 w-11 place-items-center rounded-full border border-border bg-card hover:bg-foreground hover:text-background transition-colors">
                   <Icon className="h-4 w-4" />
