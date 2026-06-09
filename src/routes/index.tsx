@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Rocket, Mail, ArrowUpRight, Github, Linkedin, Twitter } from "lucide-react";
+import { Rocket, Mail, ArrowUpRight, Github, Linkedin, Twitter, Phone, MessageCircle } from "lucide-react";
 import heroImg from "@/assets/hero.png";
 import coverLedgerly from "@/assets/cover-ledgerly.jpg";
 import coverShiftboard from "@/assets/cover-shiftboard.jpg";
@@ -309,7 +309,7 @@ function Index() {
             contract work, product support or integrations.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a href="mailto:hello@gabrielkipkoech.dev" className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-xs font-bold tracking-[0.18em] text-background hover:bg-accent transition-colors">
+            <a href="mailto:kipkoechgabriel01@gmail.com" className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-xs font-bold tracking-[0.18em] text-background hover:bg-accent transition-colors">
               <Mail className="h-4 w-4" /> EMAIL ME
             </a>
             <a href="#work" className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-xs font-bold tracking-[0.18em] hover:border-foreground transition-colors">
@@ -317,20 +317,31 @@ function Index() {
             </a>
           </div>
 
-          <div className="mt-16">
+          <div className="mx-auto mt-14 max-w-2xl text-left">
             <p className="eyebrow">Find me</p>
-            <div className="mt-5 flex justify-center gap-3">
+            <div className="mt-5 space-y-3">
               {[
-                { Icon: Github, href: "https://github.com/Gabuu94" },
-                { Icon: Linkedin, href: "#" },
-                { Icon: Twitter, href: "https://twitter.com/Eng_gabu" },
-              ].map(({ Icon, href }, i) => (
-                <a key={i} href={href} className="grid h-11 w-11 place-items-center rounded-full border border-border bg-card hover:bg-foreground hover:text-background transition-colors">
-                  <Icon className="h-4 w-4" />
+                { Icon: Mail, label: "EMAIL", value: "kipkoechgabriel01@gmail.com", href: "mailto:kipkoechgabriel01@gmail.com" },
+                { Icon: Phone, label: "CALL", value: "+254 797 585 941", href: "tel:+254797585941" },
+                { Icon: MessageCircle, label: "WHATSAPP", value: "+254 797 585 941", href: "https://wa.me/254797585941" },
+                { Icon: Linkedin, label: "LINKEDIN", value: "LinkedIn", href: "#" },
+                { Icon: Github, label: "GITHUB", value: "@Gabuu94", href: "https://github.com/Gabuu94" },
+                { Icon: Twitter, label: "TWITTER", value: "@Eng_gabu", href: "https://twitter.com/Eng_gabu" },
+              ].map(({ Icon, label, value, href }, i) => (
+                <a key={i} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" className="group flex items-center justify-between gap-4 rounded-2xl border border-border bg-card px-5 py-4 hover:border-foreground transition-colors">
+                  <div className="flex items-center gap-4">
+                    <Icon className="h-5 w-5 text-accent" />
+                    <div>
+                      <p className="text-[10px] font-bold tracking-[0.2em] text-muted-foreground">{label}</p>
+                      <p className="text-base font-semibold">{value}</p>
+                    </div>
+                  </div>
+                  <ArrowUpRight className="h-5 w-5 text-accent opacity-70 group-hover:opacity-100" />
                 </a>
               ))}
             </div>
           </div>
+
         </div>
       </section>
 
