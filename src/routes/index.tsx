@@ -311,9 +311,14 @@ function Index() {
           </div>
 
           <div className="mt-20 rounded-3xl border border-border bg-card p-8 sm:p-12">
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
               {integrations.map((i) => (
-                <span key={i} className="rounded-xl border border-border bg-background px-5 py-3 text-sm font-medium">{i}</span>
+                <div key={i.name} className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-background p-5 transition-all hover:-translate-y-1 hover:shadow-md">
+                  <div className="flex h-16 w-full items-center justify-center">
+                    <img src={i.logo} alt={`${i.name} logo`} loading="lazy" width={200} height={80} className="max-h-14 w-auto object-contain" />
+                  </div>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-muted-foreground">{i.name}</p>
+                </div>
               ))}
             </div>
             <div className="mt-10 max-w-3xl">
