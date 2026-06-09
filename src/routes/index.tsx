@@ -23,7 +23,7 @@ const navLinks = [
 ];
 
 const stats = [
-  { value: "6+ years", label: "Delivery depth", body: "Hands-on shipping across internal tools, business platforms, and long-lived operational systems." },
+  { value: "3 years", label: "Delivery depth", body: "Hands-on shipping across internal tools, business platforms, and long-lived operational systems." },
   { value: "20+", label: "Live builds", body: "Projects spanning HR, retail, logistics, education, attendance and SaaS workflows." },
   { value: "Laravel / Node", label: "Backend strength", body: "Comfortable with business rules, APIs, reporting, permissions and system structure." },
   { value: "Flutter / Web", label: "Cross-surface execution", body: "Connecting backend systems to mobile and web interfaces that teams can actually use." },
