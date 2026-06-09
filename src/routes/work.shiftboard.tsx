@@ -5,6 +5,8 @@ import { AppShell, Button, Card, Stat } from "@/components/AppShell";
 import { Donut, Bars } from "@/components/Charts";
 import { fetchStaff, toggleStaff, type Staff } from "@/lib/demo-api";
 import cover from "@/assets/cover-shiftboard.jpg";
+import gal1 from "@/assets/gallery/shiftboard-1.jpg";
+import gal2 from "@/assets/gallery/shiftboard-2.jpg";
 import { Users, Building2, Clock } from "lucide-react";
 
 export const Route = createFileRoute("/work/shiftboard")({
@@ -41,6 +43,11 @@ function Shiftboard() {
       tag="HR · Attendance"
       description="Live roster persisted to a database. Clock-in toggles update across every browser, on every branch, in real time."
       cover={cover}
+      gallery={[
+        { src: cover, alt: "Shiftboard HRMS cover", caption: "Shiftboard — HR & attendance platform" },
+        { src: gal1, alt: "HR dashboard on monitor", caption: "Live roster, attendance heatmap, branch breakdown" },
+        { src: gal2, alt: "Team collaborating in office", caption: "Teams Shiftboard serves — distributed across branches" },
+      ]}
       caseStudy={{
         category: "Web App",
         scope: "HR & attendance platform",

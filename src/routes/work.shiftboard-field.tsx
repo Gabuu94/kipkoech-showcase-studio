@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { AppShell, Card } from "@/components/AppShell";
 import { MapPin, Wifi } from "lucide-react";
+import gal1 from "@/assets/gallery/shiftboard-field-1.jpg";
+import gal2 from "@/assets/gallery/shiftboard-field-2.jpg";
 
 export const Route = createFileRoute("/work/shiftboard-field")({
   head: () => ({ meta: [{ title: "Shiftboard Field — mobile attendance" }] }),
@@ -40,6 +42,10 @@ function Field() {
       title="Shiftboard Field"
       tag="Mobile · Flutter"
       description="Field-team companion for clocking in, logging location and syncing back to the HR backend. Geofenced, offline-friendly, supervisor-aware."
+      gallery={[
+        { src: gal1, alt: "Site worker clocking in on phone", caption: "Geofenced clock-in at a construction site" },
+        { src: gal2, alt: "Supervisor viewing live attendance map", caption: "Supervisor's live attendance map across active sites" },
+      ]}
       caseStudy={{
         category: "Mobile App",
         scope: "Field attendance companion",
