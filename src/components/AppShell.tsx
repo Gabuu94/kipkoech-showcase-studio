@@ -244,6 +244,8 @@ export function AppShell({
         </section>
       )}
 
+      {gallery && gallery.length > 0 && <Gallery items={gallery} title="Screenshots & moments" />}
+
       <section id="demo" className="px-4 pt-16 pb-24">
         <div className="mx-auto max-w-6xl">
           <div className="mb-8 flex items-end justify-between gap-4">
