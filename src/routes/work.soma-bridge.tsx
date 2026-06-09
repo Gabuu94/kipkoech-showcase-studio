@@ -1,18 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { AppShell, Button, Card, Stat } from "@/components/AppShell";
+import { fetchCourses } from "@/lib/demo-api";
+import cover from "@/assets/cover-soma.jpg";
 
 export const Route = createFileRoute("/work/soma-bridge")({
   head: () => ({ meta: [{ title: "Soma Bridge — learning demo" }] }),
   component: Soma,
 });
-
-const courses = [
-  { id: 1, title: "Intro to Bookkeeping", modules: 6, done: 4 },
-  { id: 2, title: "Customer Service Essentials", modules: 8, done: 8 },
-  { id: 3, title: "Digital Marketing Basics", modules: 10, done: 3 },
-  { id: 4, title: "Workplace Safety", modules: 5, done: 1 },
-];
 
 const quiz = [
   { q: "What is double-entry bookkeeping?", a: ["Two ledgers", "Every transaction recorded twice", "Two accountants"], correct: 1 },
@@ -21,6 +17,7 @@ const quiz = [
 ];
 
 function Soma() {
+  const { data: courses = [] } = useQuery({ queryKey: ["courses"], queryFn: fetchCourses });
   const [step, setStep] = useState(0);
   const [score, setScore] = useState(0);
   const [done, setDone] = useState(false);
@@ -31,12 +28,17 @@ function Soma() {
     else setDone(true);
   };
 
+  const totalLearners = courses.reduce((a, c) => a + c.learners, 0);
+  const avgCompletion = courses.length
+    ? Math.round((courses.reduce((a, c) => a + (c.done / c.modules), 0) / courses.length) * 100)
+    : 0;
+
   return (
-    <AppShell title="Soma Bridge" tag="Learning" description="Structured courses plus assessments. Track learner progress and validate competence with quick quizzes.">
+    <AppShell title="Soma Bridge" tag="Learning" description="Structured courses with live database-backed progress and quick competence checks." cover={cover}>
       <div className="grid gap-4 sm:grid-cols-3">
-        <Stat label="Active learners" value="312" />
+        <Stat label="Active learners" value={String(totalLearners)} />
         <Stat label="Courses live" value={String(courses.length)} />
-        <Stat label="Completion rate" value="68%" />
+        <Stat label="Avg completion" value={`${avgCompletion}%`} />
       </div>
 
       <div className="mt-8 grid gap-6 lg:grid-cols-2">

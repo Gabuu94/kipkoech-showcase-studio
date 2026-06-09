@@ -7,11 +7,13 @@ export function AppShell({
   tag,
   description,
   children,
+  cover,
 }: {
   title: string;
   tag: string;
   description: string;
   children: ReactNode;
+  cover?: string;
 }) {
   return (
     <div className="min-h-screen">
@@ -43,6 +45,11 @@ export function AppShell({
           <p className="eyebrow">{tag}</p>
           <h1 className="mt-3 font-serif text-4xl sm:text-5xl">{title}</h1>
           <p className="mt-4 max-w-2xl text-muted-foreground">{description}</p>
+          {cover && (
+            <div className="mt-8 overflow-hidden rounded-3xl border border-border">
+              <img src={cover} alt={title} loading="lazy" width={1280} height={768} className="h-64 w-full object-cover sm:h-80" />
+            </div>
+          )}
         </div>
       </section>
 
