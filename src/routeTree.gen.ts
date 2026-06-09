@@ -15,10 +15,13 @@ import { Route as WorkShiftboardFieldRouteImport } from './routes/work.shiftboar
 import { Route as WorkShiftboardRouteImport } from './routes/work.shiftboard'
 import { Route as WorkRoutelineDriverRouteImport } from './routes/work.routeline-driver'
 import { Route as WorkRoutelineRouteImport } from './routes/work.routeline'
+import { Route as WorkMediremindRouteImport } from './routes/work.mediremind'
 import { Route as WorkLedgerlyRouteImport } from './routes/work.ledgerly'
 import { Route as WorkKioskCheckinRouteImport } from './routes/work.kiosk-checkin'
 import { Route as WorkKazanaRetailRouteImport } from './routes/work.kazana-retail'
 import { Route as WorkKazanaPosRouteImport } from './routes/work.kazana-pos'
+import { Route as WorkFieldauditRouteImport } from './routes/work.fieldaudit'
+import { Route as WorkFarmtrackRouteImport } from './routes/work.farmtrack'
 import { Route as WorkClinicqueueRouteImport } from './routes/work.clinicqueue'
 
 const IndexRoute = IndexRouteImport.update({
@@ -51,6 +54,11 @@ const WorkRoutelineRoute = WorkRoutelineRouteImport.update({
   path: '/work/routeline',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WorkMediremindRoute = WorkMediremindRouteImport.update({
+  id: '/work/mediremind',
+  path: '/work/mediremind',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WorkLedgerlyRoute = WorkLedgerlyRouteImport.update({
   id: '/work/ledgerly',
   path: '/work/ledgerly',
@@ -71,6 +79,16 @@ const WorkKazanaPosRoute = WorkKazanaPosRouteImport.update({
   path: '/work/kazana-pos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WorkFieldauditRoute = WorkFieldauditRouteImport.update({
+  id: '/work/fieldaudit',
+  path: '/work/fieldaudit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkFarmtrackRoute = WorkFarmtrackRouteImport.update({
+  id: '/work/farmtrack',
+  path: '/work/farmtrack',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WorkClinicqueueRoute = WorkClinicqueueRouteImport.update({
   id: '/work/clinicqueue',
   path: '/work/clinicqueue',
@@ -80,10 +98,13 @@ const WorkClinicqueueRoute = WorkClinicqueueRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/work/clinicqueue': typeof WorkClinicqueueRoute
+  '/work/farmtrack': typeof WorkFarmtrackRoute
+  '/work/fieldaudit': typeof WorkFieldauditRoute
   '/work/kazana-pos': typeof WorkKazanaPosRoute
   '/work/kazana-retail': typeof WorkKazanaRetailRoute
   '/work/kiosk-checkin': typeof WorkKioskCheckinRoute
   '/work/ledgerly': typeof WorkLedgerlyRoute
+  '/work/mediremind': typeof WorkMediremindRoute
   '/work/routeline': typeof WorkRoutelineRoute
   '/work/routeline-driver': typeof WorkRoutelineDriverRoute
   '/work/shiftboard': typeof WorkShiftboardRoute
@@ -93,10 +114,13 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/work/clinicqueue': typeof WorkClinicqueueRoute
+  '/work/farmtrack': typeof WorkFarmtrackRoute
+  '/work/fieldaudit': typeof WorkFieldauditRoute
   '/work/kazana-pos': typeof WorkKazanaPosRoute
   '/work/kazana-retail': typeof WorkKazanaRetailRoute
   '/work/kiosk-checkin': typeof WorkKioskCheckinRoute
   '/work/ledgerly': typeof WorkLedgerlyRoute
+  '/work/mediremind': typeof WorkMediremindRoute
   '/work/routeline': typeof WorkRoutelineRoute
   '/work/routeline-driver': typeof WorkRoutelineDriverRoute
   '/work/shiftboard': typeof WorkShiftboardRoute
@@ -107,10 +131,13 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/work/clinicqueue': typeof WorkClinicqueueRoute
+  '/work/farmtrack': typeof WorkFarmtrackRoute
+  '/work/fieldaudit': typeof WorkFieldauditRoute
   '/work/kazana-pos': typeof WorkKazanaPosRoute
   '/work/kazana-retail': typeof WorkKazanaRetailRoute
   '/work/kiosk-checkin': typeof WorkKioskCheckinRoute
   '/work/ledgerly': typeof WorkLedgerlyRoute
+  '/work/mediremind': typeof WorkMediremindRoute
   '/work/routeline': typeof WorkRoutelineRoute
   '/work/routeline-driver': typeof WorkRoutelineDriverRoute
   '/work/shiftboard': typeof WorkShiftboardRoute
@@ -122,10 +149,13 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/work/clinicqueue'
+    | '/work/farmtrack'
+    | '/work/fieldaudit'
     | '/work/kazana-pos'
     | '/work/kazana-retail'
     | '/work/kiosk-checkin'
     | '/work/ledgerly'
+    | '/work/mediremind'
     | '/work/routeline'
     | '/work/routeline-driver'
     | '/work/shiftboard'
@@ -135,10 +165,13 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/work/clinicqueue'
+    | '/work/farmtrack'
+    | '/work/fieldaudit'
     | '/work/kazana-pos'
     | '/work/kazana-retail'
     | '/work/kiosk-checkin'
     | '/work/ledgerly'
+    | '/work/mediremind'
     | '/work/routeline'
     | '/work/routeline-driver'
     | '/work/shiftboard'
@@ -148,10 +181,13 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/work/clinicqueue'
+    | '/work/farmtrack'
+    | '/work/fieldaudit'
     | '/work/kazana-pos'
     | '/work/kazana-retail'
     | '/work/kiosk-checkin'
     | '/work/ledgerly'
+    | '/work/mediremind'
     | '/work/routeline'
     | '/work/routeline-driver'
     | '/work/shiftboard'
@@ -162,10 +198,13 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   WorkClinicqueueRoute: typeof WorkClinicqueueRoute
+  WorkFarmtrackRoute: typeof WorkFarmtrackRoute
+  WorkFieldauditRoute: typeof WorkFieldauditRoute
   WorkKazanaPosRoute: typeof WorkKazanaPosRoute
   WorkKazanaRetailRoute: typeof WorkKazanaRetailRoute
   WorkKioskCheckinRoute: typeof WorkKioskCheckinRoute
   WorkLedgerlyRoute: typeof WorkLedgerlyRoute
+  WorkMediremindRoute: typeof WorkMediremindRoute
   WorkRoutelineRoute: typeof WorkRoutelineRoute
   WorkRoutelineDriverRoute: typeof WorkRoutelineDriverRoute
   WorkShiftboardRoute: typeof WorkShiftboardRoute
@@ -217,6 +256,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkRoutelineRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/work/mediremind': {
+      id: '/work/mediremind'
+      path: '/work/mediremind'
+      fullPath: '/work/mediremind'
+      preLoaderRoute: typeof WorkMediremindRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/work/ledgerly': {
       id: '/work/ledgerly'
       path: '/work/ledgerly'
@@ -245,6 +291,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkKazanaPosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/work/fieldaudit': {
+      id: '/work/fieldaudit'
+      path: '/work/fieldaudit'
+      fullPath: '/work/fieldaudit'
+      preLoaderRoute: typeof WorkFieldauditRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/farmtrack': {
+      id: '/work/farmtrack'
+      path: '/work/farmtrack'
+      fullPath: '/work/farmtrack'
+      preLoaderRoute: typeof WorkFarmtrackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/work/clinicqueue': {
       id: '/work/clinicqueue'
       path: '/work/clinicqueue'
@@ -258,10 +318,13 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   WorkClinicqueueRoute: WorkClinicqueueRoute,
+  WorkFarmtrackRoute: WorkFarmtrackRoute,
+  WorkFieldauditRoute: WorkFieldauditRoute,
   WorkKazanaPosRoute: WorkKazanaPosRoute,
   WorkKazanaRetailRoute: WorkKazanaRetailRoute,
   WorkKioskCheckinRoute: WorkKioskCheckinRoute,
   WorkLedgerlyRoute: WorkLedgerlyRoute,
+  WorkMediremindRoute: WorkMediremindRoute,
   WorkRoutelineRoute: WorkRoutelineRoute,
   WorkRoutelineDriverRoute: WorkRoutelineDriverRoute,
   WorkShiftboardRoute: WorkShiftboardRoute,
