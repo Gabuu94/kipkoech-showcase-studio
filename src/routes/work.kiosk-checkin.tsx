@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { AppShell, Card } from "@/components/AppShell";
 import { Fingerprint, ShieldCheck } from "lucide-react";
+import gal1 from "@/assets/gallery/kiosk-1.jpg";
+import gal2 from "@/assets/gallery/kiosk-2.jpg";
 
 export const Route = createFileRoute("/work/kiosk-checkin")({
   head: () => ({ meta: [{ title: "Kiosk Check-In — shared device" }] }),
@@ -43,6 +45,10 @@ function Kiosk() {
       title="Kiosk Check-In"
       tag="Mobile · Shared device"
       description="A single tablet at the entrance. Staff punch a PIN, the kiosk logs them in, events stream straight into the HR backend."
+      gallery={[
+        { src: gal1, alt: "Worker tapping PIN on wall kiosk", caption: "Wall-mounted kiosk at the factory entrance" },
+        { src: gal2, alt: "PIN keypad close-up on tablet", caption: "Large-target PIN keypad — works one-handed, gloves on" },
+      ]}
       caseStudy={{
         category: "Mobile App",
         scope: "Shared-device kiosk",
