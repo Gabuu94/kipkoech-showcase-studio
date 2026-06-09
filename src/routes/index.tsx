@@ -296,9 +296,9 @@ function Index() {
             <p className="eyebrow">Find me</p>
             <div className="mt-5 flex justify-center gap-3">
               {[
-                { Icon: Github, href: "#" },
+                { Icon: Github, href: "https://github.com/Gabuu94" },
                 { Icon: Linkedin, href: "#" },
-                { Icon: Twitter, href: "#" },
+                { Icon: Twitter, href: "https://twitter.com/Eng_gabu" },
               ].map(({ Icon, href }, i) => (
                 <a key={i} href={href} className="grid h-11 w-11 place-items-center rounded-full border border-border bg-card hover:bg-foreground hover:text-background transition-colors">
                   <Icon className="h-4 w-4" />
