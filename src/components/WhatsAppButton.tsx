@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import whatsappLogo from "../assets/logos/whatsapp-logo.png";
 
 export function WhatsAppButton() {
   return (
@@ -11,7 +11,13 @@ export function WhatsAppButton() {
       aria-label="Chat on WhatsApp"
       title="Chat on WhatsApp"
     >
-      <MessageCircle className="h-7 w-7 text-white" fill="white" />
+      <img
+        src={whatsappLogo}
+        alt="WhatsApp"
+        width={28}
+        height={28}
+        className="h-7 w-7 object-contain"
+      />
     </a>
   );
 }
